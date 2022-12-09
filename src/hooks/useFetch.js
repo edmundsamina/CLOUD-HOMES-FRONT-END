@@ -15,5 +15,5 @@ export default function useFetch() {
         getData();
     }, []);
 
-    return [ housesArray ];
+    return [ housesArray, sethousesArray ];
 }

@@ -3,9 +3,9 @@ import { HouseFetchContext } from "../HouseFetchContext/HouseFetchContext";
 import star from "../../assets/star.png";
 import cardImg from "../../assets/cardimg.png";
 
-export default function Card(homes) {
-  const [ housesArray ] = useFetch();
-  console.log("housesArray: ",housesArray);
+export default function Card({housesArray}) {
+ 
+  // console.log("housesArray: ",housesArray);
 /*
   const housesArray = [
     {
@@ -57,7 +57,7 @@ export default function Card(homes) {
           <p>{location}</p>
           <p className="price">${price}</p>
           {rent ? <><input type="checkbox" checked /><label>Rent</label></> : <><input type="checkbox" /><label>Rent</label></>}
-          {buy ? <><input type="checkbox" checked /><label>Rent</label></> : <><input type="checkbox" /><label>Rent</label></>}
+          {buy ? <><input type="checkbox" checked /><label>Rent</label></> : <><input type="checkbox" /><label>Buy</label></>}
           </div>
       );
     })}
