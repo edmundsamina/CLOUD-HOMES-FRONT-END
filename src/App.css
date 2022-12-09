@@ -38,7 +38,10 @@ nav {
 }
 
 .landing-image{
-  background-image: url('./assets/landingimg.png');
+  background-image: url('./assets/Untitled\ \(7000\ ×\ 3402px\)\ \(1\).gif');
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #C7EDE6;
   background-position: center;
   background-size: cover;
@@ -90,4 +93,21 @@ nav {
 
 .price::first-letter {
   color: black;
+}
+
+.landing-container{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  flex-direction: column;
+  background-color: rgba(236, 255, 254, 0.7);
+  height: 50%;
+  width: 40%;
+}
+
+.logo-name{
+  color: rgb(12, 48, 61);
+  font-size: 25px;
+
 }
