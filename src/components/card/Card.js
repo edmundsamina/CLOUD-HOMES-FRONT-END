@@ -4,8 +4,9 @@ import star from "../../assets/star.png";
 import cardImg from "../../assets/cardimg.png";
 
 export default function Card(homes) {
-  //const housesArray = useFetch();
-
+  const [ housesArray ] = useFetch();
+  console.log("housesArray: ",housesArray);
+/*
   const housesArray = [
     {
       name: "The White House",
@@ -38,7 +39,7 @@ export default function Card(homes) {
       id: 3
     }
   ]
-
+*/
   return (
     <div className="card-index">
     {housesArray.map(({name, location, price, rent, buy, image, desc, id}) => {
