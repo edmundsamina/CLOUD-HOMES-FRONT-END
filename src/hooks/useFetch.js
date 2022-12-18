@@ -1,6 +1,5 @@
-//import { HouseFetchContext } from "../components/HouseFetchContext/HouseFetchContext";
 import { useEffect, useState } from "react";
-//import { HouseFetchContext } from "../components/HouseFetchContext/HouseFetchContext";
+
 
 export default function useFetch() {
     const [housesArray, sethousesArray] = useState([]);

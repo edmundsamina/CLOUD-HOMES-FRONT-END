@@ -14,6 +14,7 @@ function App() {
   const [searchData, setSearchData] = useState("")
   const [ results ] = useFetchSearch(searchData);
   const [sortLowHigh, setSortLowHigh] = useState(true)
+  const [sortState, setSortState] = useState("none");
 
 
 function clickHandler(e){
@@ -22,17 +23,22 @@ function clickHandler(e){
   setHousesArray(results)
 }
 
+const sortMethods = {
+  none: { method: (a, b) => null },
+  ascending: { method: (a, b) => (a.price < b.price ? -1 : 1) },
+  descending: { method: (a, b) => (a.price > b.price ? -1 : 1) },
+};
 
-useEffect(() => {
-if(sortLowHigh===true){
-housesArray.sort((a, b) => (a.price - b.price) )
-}
-else {
-  housesArray.sort((a, b) => (a.price - b.price) )
-}
-console.log(sortLowHigh)
-}
-, [sortLowHigh]);
+// useEffect(() => {
+// if(sortLowHigh===true){
+// housesArray.sort((a, b) => (a.price - b.price) )
+// }
+// else {
+//   housesArray.sort((a, b) => (a.price - b.price) )
+// }
+// console.log(sortLowHigh)
+// }
+// , [sortLowHigh, housesArray]);
 
 
   return (
@@ -40,13 +46,21 @@ console.log(sortLowHigh)
       <Navbar/>
       <Landing/>
       <Search onChange={(e)=>{setinputData(e.target.value)}} onClick={clickHandler} /> 
-      <select onChange={(e)=>{setSortLowHigh(e.target.value)}}>
-        <option value={true}>Price: Lowest to Highest</option>
-        <option value={false}>Price: Highest to Lowest</option>
-      </select>
-      <Card key = {uuidv4} housesArray = {housesArray}/>
+      <select  defaultValue={'DEFAULT'} onChange={(e) => setSortState(e.target.value)}>
+       <option value="DEFAULT" disabled>None</option>
+        <option value="ascending">Price: Lowest to Highest</option>
+        <option value="descending">Price: Highest to Lowest</option>
+      </select> {
+        housesArray.sort(sortMethods[sortState].method).map((item)=>{
+          return  <Card key = {uuidv4} image = {item.image} name={item.name} desc={item.desc} location={item.location} price={item.price} rent={item.rent}/>
+        })
+      }
+     
     </div>
   );
 }
 
+// {data.sort(sortMethods[sortState].method).map((el, i) => (
+//   <li key={i}>{el}</li>
+// ))}
 export default App;
