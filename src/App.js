@@ -72,7 +72,8 @@ function App() {
         array={bedroomOptions}
         onChange={(e) => setBedroomNumber(e.target.value)}
       />
-      {housesArray.sort(sortMethods[sortState].method).map((item) => {
+      <div className="displayContainer">
+      <div className="cardContainer">{housesArray.sort(sortMethods[sortState].method).map((item) => {
         return (
           <Card
             // key={uuidv4}
@@ -84,7 +85,8 @@ function App() {
             rent={item.rent}
           />
         );
-      })}
+      })}</div>
+      </div>
       
     </div>
   );
