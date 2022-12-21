@@ -83,6 +83,11 @@ function App() {
             location={item.location}
             price={item.price}
             rent={item.rent}
+            bedrooms={item.bedrooms}
+            bathrooms={item.bathrooms}
+            garden ={item.garden}
+            metaverse ={item.metaverse}
+            city={item.city}
           />
         );
       })}</div>

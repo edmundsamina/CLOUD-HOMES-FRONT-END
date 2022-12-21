@@ -1,0 +1,133 @@
+:root {
+    --primaryBlue: hsl(215, 51%, 70%);
+    --primaryCyan: hsl(178, 100%, 50%);
+    --neutralDarkMain: hsl(217, 54%, 11%);
+    --neutralDarkCard: hsl(216, 50%, 16%);
+    --neutralDarkLine: hsl(215, 32%, 27%);
+    --trueNeutral: hsl(0, 0%, 100%);
+    --fontOne: 'Outfit', sans-serif;
+}
+* {
+    padding: 0;
+    margin:0;
+    font-family: 'Outfit';
+}
+body {
+    background-color:var(--neutralDarkMain);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Outfit';
+
+}
+
+.card{
+    background-color:var(--neutralDarkCard);
+    width: 275px;
+    border-radius: 15px;
+    padding: 1.5rem;
+
+  
+}
+
+.image-container{
+    width: 100%;
+    height: 200px;
+   
+}
+
+.img{
+   width: 100%;
+   height: 100%;
+   border-radius: 10px;
+ 
+   
+}
+
+h3{
+    color: var(--trueNeutral);
+    padding-bottom: 0.8rem;
+    padding-top: 1rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+p {
+    color: var(--primaryBlue);
+    padding-bottom: 1rem;
+    line-height: 1.5;
+    font-family: 'Outfit Light';
+    font-weight: 500;
+}
+
+sub{
+    color: var(--primaryBlue);
+}
+
+h4{
+    color: var(--primaryCyan);
+}
+
+.profile-icon{
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+footer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    gap: 5px;
+}
+
+.price-days-container,
+.bedrooms-bathrooms{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var( --primaryBlue);
+    margin-bottom: 0.8rem;
+   
+}
+
+.price, 
+.days,
+.bedrooms,
+.bathrooms,
+.garden{
+    font-family: 'Outfit Med';
+    padding: 800;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.price{
+    color: var(--primaryCyan);
+    font-weight: 500;
+
+  
+}
+
+.days{
+    color: var(--primaryBlue);
+    font-weight: 500;
+}
+
+.creator-subtitle{
+    color: var(--primaryBlue);
+}
+
+.icon{
+    height: 30px;
+}
