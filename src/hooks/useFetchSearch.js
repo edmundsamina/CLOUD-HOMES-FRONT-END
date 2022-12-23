@@ -1,17 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import useFetch from "../hooks/useFetch";
 
-export default function useFetchSearch(searchData, searchKey, rentBoolean) {
-    const [searchArray, setsearchArray] = useState([]);
-
+export default function useFetchSearch(onClickData, searchKey, rentBoolean) {
+    //updating the state in the onload hook to avoid sending double requests
+    const [housesArray, setHousesArray] = useFetch();
+    
     useEffect(() => {
         const domain="https://cloudhomesbackend.onrender.com";
         async function getData() {
-        const response = await fetch(`${domain}/api/properties/?${searchKey}=${searchData}&rent=${rentBoolean}`);
+        const response = await fetch(`${domain}/api/properties/?${searchKey}=${onClickData}&rent=${rentBoolean}`);
+
             const data = await response.json();
-            setsearchArray(data.payload);
+            setHousesArray(data.payload)
         }
         getData();
-    }, [searchData, searchKey, rentBoolean]);
-
-    return [ searchArray ];
+    }, [onClickData, searchKey, rentBoolean,
+        setHousesArray]);
+        //exporting this updated data 
+    return [ housesArray ];
 }

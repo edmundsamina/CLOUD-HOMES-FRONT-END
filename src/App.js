@@ -4,19 +4,23 @@ import Navbar from "./components/navBar/Navbar";
 import Card from "./components/card/Card";
 import Search from "./components/search/Search.js";
 import useFetchSearch from "./hooks/useFetchSearch";
-import useFetch from "./hooks/useFetch";
 import DropDown from "./components/DropDown/DropDown";
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
-  const [housesArray, setHousesArray] = useFetch();
+  //input captures the state of the input as the user types
   const [inputData, setinputData] = useState("");
-  const [searchData, setSearchData] = useState("");
+  //second state to only pass through the input state once the user clicks send, otherwise the useFetch is triggered everytime they type
+  const [onClickData, setOnClickData] = useState("")
+  //second paramter of the fetch request, if false then fetches homes for sale
   const [rentBoolean, setRentBoolean]= useState()
-  const [results] = useFetchSearch(searchData, 'metaverse', rentBoolean);
+  //extracting the original fetch data and updating it to avoid the double click
+  const [housesArray] = useFetchSearch(onClickData, 'metaverse', rentBoolean);
   const [sortState, setSortState] = useState("none");
   const [propertyType, setPropertyType] = useState("");
   const [bedroomNumber, setBedroomNumber] = useState("")
 
+  console.log(housesArray)
   const propertyTypeOptions = [
     "House",
     "Flat",
@@ -26,23 +30,24 @@ function App() {
     "Estate",
     "Cave",
   ];
-  console.log(propertyType);
+
+
 
   const bedroomOptions = ["Studio","1","2","3","4","5+"]
-  console.log(bedroomNumber)
-
+ 
+  //sets the rent boolean to be false, because we want homes to buy and also passes the input data once completed
   function clickHandlerBuy(e) {
     e.preventDefault();
-    setSearchData(inputData);
-    setHousesArray(results);
+    setOnClickData(inputData)
     setRentBoolean(false)
+ 
   }
-
+//sets the rent boolean to be true
   function clickHandlerRent(e) {
     e.preventDefault();
-    setSearchData(inputData);
-    setHousesArray(results);
     setRentBoolean(true)
+    setOnClickData(inputData)
+
   }
 
 
@@ -81,7 +86,7 @@ function App() {
       <div className="cardContainer">{housesArray.sort(sortMethods[sortState].method).map((item) => {
         return (
           <Card
-            // key={uuidv4}
+            key={uuidv4()}
             image={item.image}
             name={item.name}
             desc={item.desc}
