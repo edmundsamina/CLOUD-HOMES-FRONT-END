@@ -1,0 +1,35 @@
+.search-container{
+    display: flex;
+    background-color: white;
+    height:  20%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.search-bar{
+    background-color: #e3edf7;
+  padding: 16px 32px;
+  border: none;
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: #a9b8c9;
+  transition: all 240ms ease-out;
+  width: 40%;
+}
+
+button{
+
+        position: relative;
+        width: 180px;
+        height: 40px;
+        margin: 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+      
+
+}
+   

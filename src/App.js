@@ -1,20 +1,17 @@
 import "./App.css";
 import { useState } from "react";
 import Navbar from "./components/navBar/Navbar";
-import Landing from "./components/landingPage/Landing";
 import Card from "./components/card/Card";
 import Search from "./components/search/Search.js";
 import useFetchSearch from "./hooks/useFetchSearch";
 import useFetch from "./hooks/useFetch";
-import MainSearch from "./components/mainSearch/mainSearch";
-import { v4 as uuidv4 } from "uuid";
 import DropDown from "./components/DropDown/DropDown";
 
 function App() {
   const [housesArray, setHousesArray] = useFetch();
   const [inputData, setinputData] = useState("");
   const [searchData, setSearchData] = useState("");
-  const [results] = useFetchSearch(searchData);
+  const [results] = useFetchSearch(searchData, 'metaverse');
   const [sortState, setSortState] = useState("none");
   const [propertyType, setPropertyType] = useState("");
   const [bedroomNumber, setBedroomNumber] = useState("")
@@ -48,13 +45,10 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <MainSearch/>
-      <Search
-        onChange={(e) => {
+     <Search onClick={clickHandler} onChange={(e) => {
           setinputData(e.target.value);
-        }}
-        onClick={clickHandler}
-      />
+        }} />
+
       <select
         defaultValue={"DEFAULT"}
         onChange={(e) => setSortState(e.target.value)}
