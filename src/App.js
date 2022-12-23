@@ -11,7 +11,8 @@ function App() {
   const [housesArray, setHousesArray] = useFetch();
   const [inputData, setinputData] = useState("");
   const [searchData, setSearchData] = useState("");
-  const [results] = useFetchSearch(searchData, 'metaverse');
+  const [rentBoolean, setRentBoolean]= useState()
+  const [results] = useFetchSearch(searchData, 'metaverse', rentBoolean);
   const [sortState, setSortState] = useState("none");
   const [propertyType, setPropertyType] = useState("");
   const [bedroomNumber, setBedroomNumber] = useState("")
@@ -30,11 +31,20 @@ function App() {
   const bedroomOptions = ["Studio","1","2","3","4","5+"]
   console.log(bedroomNumber)
 
-  function clickHandler(e) {
+  function clickHandlerBuy(e) {
     e.preventDefault();
     setSearchData(inputData);
     setHousesArray(results);
+    setRentBoolean(false)
   }
+
+  function clickHandlerRent(e) {
+    e.preventDefault();
+    setSearchData(inputData);
+    setHousesArray(results);
+    setRentBoolean(true)
+  }
+
 
   const sortMethods = {
     none: { method: (a, b) => null },
@@ -45,7 +55,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-     <Search onClick={clickHandler} onChange={(e) => {
+     <Search onClickBuy={clickHandlerBuy} onClickRent={clickHandlerRent} onChange={(e) => {
           setinputData(e.target.value);
         }} />
 
