@@ -6,6 +6,7 @@ import Card from "./components/card/Card";
 import Search from "./components/search/Search.js";
 import useFetchSearch from "./hooks/useFetchSearch";
 import useFetch from "./hooks/useFetch";
+import MainSearch from "./components/mainSearch/mainSearch";
 import { v4 as uuidv4 } from "uuid";
 import DropDown from "./components/DropDown/DropDown";
 
@@ -47,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Landing />
+      <MainSearch/>
       <Search
         onChange={(e) => {
           setinputData(e.target.value);
