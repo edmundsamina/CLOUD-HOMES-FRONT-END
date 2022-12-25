@@ -7,13 +7,12 @@ import logo from "../../assets/icons8-google-96.png";
 export default function Card(props) {
   return (
     <div className="card-index">
-      {/* {housesArray.map(({name, location, price, rent, buy, image, desc, id}) => {
-      return( */}
       <div className="card-container">
         <div className="card">
           <div className="image-container">
             <img className="img" src={props.image} alt={props.name} />{" "}
           </div>
+          <div className="text-container">
           <h3>{props.name.toUpperCase()}</h3>
           <div className="price-days-container">
             <span className="price">${props.price}</span>
@@ -44,27 +43,15 @@ export default function Card(props) {
               {props.bathrooms}
             </span>
           </div>
-          <footer>
+          {/* <footer>
             <img className="profile-icon" src={logo} alt="creator" />
             <span className="creator-subtitle">{props.metaverse} - </span>
             {props.city}
-          </footer>
+          </footer> */}
+          </div>
         </div>
       </div>
-      {/* ); */}
-      {/* })} */}
     </div>
   );
 }
 
-//image
-//name
-// price // rent or buy
-//
-
-// <img src={props.image} alt={props.name} />
-// <h3>{props.name}</h3>
-// <p>{props.desc}</p>
-// <p>{props.location}</p>
-// <p className="price">${props.price}</p>
-// {props.rent ? <p className="rent">Rent</p> : <p className="buy">Buy</p>}

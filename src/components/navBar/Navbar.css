@@ -1,0 +1,17 @@
+nav{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+}
+
+.landing-container{
+    background-color: var(--neutralDarkCard);
+    height: 300px;
+    width: 100%;
+}
+
+img{
+    height: 100px;
+    margin-top: 60px;
+  
+}

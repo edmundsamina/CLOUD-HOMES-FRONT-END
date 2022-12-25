@@ -20,48 +20,6 @@ body {
   font-family: 'Patrick Hand';
 }
 
-nav {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  padding: 10px 30px;
-
-
-}
-
-.nav--logo{
-  max-width: 100px;
-}
-
-
-
-.landing-section{
-  background-color: aqua;
-  height: 500px;
-  
-}
-
-.landing-image{
-  background-image: url('./assets/Untitled\ \(7000\ ×\ 3402px\)\ \(1\).gif');
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #C7EDE6;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  
-}
-
-.landing-title{
-  margin-bottom: 15px;
-}
-
-.landing-text{
-  margin-top: 0;
-}
-
 
 .card-container{
   height: 300px;
@@ -99,28 +57,13 @@ nav {
   color: black;
 }
 
-.landing-container{
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  font-size: 25px;
-  flex-direction: column;
-  background-color: rgba(236, 255, 254, 0.7);
-  height: 50%;
-  width: 40%;
-}
-
-.logo-name{
-  color: rgb(12, 48, 61);
-  font-size: 25px;
-
-}
 
 .cardContainer {
   height: 100vh;
-  width: 70vw;
   display: grid;
   grid-template-columns: repeat(4, auto);
+  grid-column-gap: 100px;
+  grid-row-gap: 50px;
 
 
  
