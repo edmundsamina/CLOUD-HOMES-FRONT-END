@@ -12,23 +12,14 @@
     margin:0;
     font-family: 'Outfit';
 }
-/* body {
-    background-color:var(--neutralDarkMain);
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: 'Outfit'; */
-
 
 .card{
     background-color:var(--neutralDarkCard);
     width: 275px;
     max-height: 360px;
     border-radius: 15px;
-    /* padding: 0.8rem; */
+    box-shadow: 1px 7px 50px 28px rgba(193, 227, 255, 0.33);
+
 
   
 }

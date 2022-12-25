@@ -9,6 +9,7 @@
 
 .App{
   height: 100vh;
+
 }
 
 * {
@@ -20,6 +21,14 @@ body {
   font-family: 'Patrick Hand';
 }
 
+.landing-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+  background-color: var(--neutralDarkCard);
+}
 
 .card-container{
   height: 300px;
@@ -59,18 +68,17 @@ body {
 
 
 .cardContainer {
-  height: 100vh;
+  margin-top: 100px;
+  width:1200px ;
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-column-gap: 100px;
-  grid-row-gap: 50px;
-
-
+  grid-template-columns: auto auto auto auto;
+  gap: 50px;
  
-
 }
 
-.displayContainer{
+.grid-parent{
   display: flex;
-  justify-content:center;
+  align-items: center;
+  
+  justify-content: center;
 }
