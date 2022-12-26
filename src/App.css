@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Patrick Hand';
-  src: url('./assets/PatrickHand-Regular.ttf');
+  font-family: 'Rightous';
+  src: url('./assets/Righteous-Regular.ttf');
 }
 
 .grey {
@@ -9,16 +9,19 @@
 
 .App{
   height: 100vh;
+ 
 
 }
 
 * {
   box-sizing: border-box;
+ 
+  
 }
 
 body {
   margin: 0;
-  font-family: 'Patrick Hand';
+ 
 }
 
 .landing-page{
@@ -54,19 +57,12 @@ body {
   align-items: center;
 }
 
-.card-star{
-  height: 14px;
+h3,
+button,
+p,
+span{
+  font-family: 'Rightous';
 }
-
-.price {
-  color: red;
-}
-
-.price::first-letter {
-  color: black;
-}
-
-
 .cardContainer {
   margin-top: 100px;
   width:1200px ;

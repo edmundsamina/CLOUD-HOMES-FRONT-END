@@ -1,8 +1,8 @@
 :root {
-    --primaryBlue: hsl(215, 51%, 70%);
-    --primaryCyan: hsl(178, 100%, 50%);
+    --primaryBlue: rgb(236, 185, 82);
+    --primaryCyan: rgb(251, 221, 159);
     --neutralDarkMain: #ffffff;
-    --neutralDarkCard: #01204C;
+    --neutralDarkCard: #2D2D2D;
     --neutralDarkLine: hsl(215, 32%, 27%);
     --trueNeutral: hsl(0, 0%, 100%);
     --fontOne: 'Outfit', sans-serif;
@@ -11,6 +11,7 @@
     padding: 0;
     margin:0;
     font-family: 'Outfit';
+    color: white;
 }
 
 .card{
@@ -18,10 +19,7 @@
     width: 275px;
     max-height: 360px;
     border-radius: 15px;
-    box-shadow: 1px 7px 50px 28px rgba(193, 227, 255, 0.33);
-
-
-  
+    
 }
 
 .text-container{
@@ -55,7 +53,6 @@ p {
     color: var(--primaryBlue);
     padding-bottom: 1rem;
     line-height: 1.5;
-    font-family: 'Outfit Light';
     font-weight: 500;
 }
 
@@ -104,7 +101,7 @@ footer{
 .bedrooms,
 .bathrooms,
 .garden{
-    font-family: 'Outfit Med';
+    font-family: 'Rightous';
     padding: 800;
     display: flex;
     flex-direction: row;
