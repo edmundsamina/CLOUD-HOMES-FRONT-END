@@ -176,8 +176,8 @@ span{
 #pop-up-card {
  
   font-family: "Raleway";
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  max-height: 70%;
   position: absolute;
   background: white;
   margin: 0 auto;
@@ -208,6 +208,8 @@ span{
   margin-top: -3px;
   transition: all 0.3s ease;
   cursor: pointer;
+  fill:  #727272;
+ 
 }
 
 #heart:hover {
@@ -216,9 +218,12 @@ span{
 
 #arrow {
   float: left;
-  height: 15px;
-  width: 15px;
+  margin-top: -3px;
+  fill: #727272;
+  height: 24;
+  width: 24;
   margin-right: 10px;
+  font-size: large;
 }
 
 #pop-up-image {
@@ -226,18 +231,18 @@ span{
   width: 45%;
   text-align: center;
   float: left;
-  max-height: 240px;
-  max-width: 50%;
+  max-height: 400px;
+ 
 }
 
 #pop-up-description {
   padding: 30px;
+  font-family: "Raleway";
   float: left;
   width: 55%;
   border-left: 2px solid #efefef;
 }
-#pop-up-description,
-h1 {
+#pop-up-description-h1 {
   color: #515151;
   font-weight: 300;
   padding-top: 15px;
@@ -246,25 +251,22 @@ h1 {
   font-weight: 300;
 }
 
-#pop-up-description,
-h2 {
+#pop-up-description-h2 {
   color: #515151;
   margin: 0;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-#pop-up-description,
-h4 {
+#pop-up-description-h4 {
   margin: 0;
   color: #727272;
-  text-transform: uppercase;
+  
   font-weight: 500;
   font-size: 12px;
 }
 
-#pop-up-description,
-p {
+#pop-up-description-p {
   font-size: 12px;
   line-height: 20px;
   color: #727272;
