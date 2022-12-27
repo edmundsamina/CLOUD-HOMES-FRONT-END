@@ -56,11 +56,11 @@ export default function Card(props) {
               {props.bathrooms}
             </span>
 
-            <footer>
+            {/* <footer>
               <img className="profile-icon" src={logo} alt="creator" />
               <span className="creator-subtitle">{props.metaverse} - </span>
               {props.city}
-            </footer>
+            </footer> */}
           </div>
         </div>
       </div>
@@ -90,6 +90,7 @@ export default function Card(props) {
         
         </Modal>
       ) : null}
+    </div>
     </div>
   );
 }

@@ -133,8 +133,7 @@ span{
   justify-content: center;
 }
 
-  grid-template-columns: repeat(4, auto);
-}
+ 
 
 .displayContainer {
   display: flex;
@@ -154,7 +153,6 @@ span{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%px;
 }
 
 #modal:empty {
@@ -168,7 +166,8 @@ span{
 #pop-up-card {
  
   font-family: "Raleway";
-  width: 650px;
+  width: 50%;
+  height: 50%;
   position: absolute;
   background: white;
   margin: 0 auto;
