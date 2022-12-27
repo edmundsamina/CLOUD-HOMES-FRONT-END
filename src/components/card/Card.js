@@ -11,8 +11,6 @@ export default function Card(props) {
 
   return (
     <div className="card-index">
-      {/* {housesArray.map(({name, location, price, rent, buy, image, desc, id}) => {
-      return( */}
       <div className="card-container">
         <div className="card">
           <div className="image-container">
@@ -23,6 +21,7 @@ export default function Card(props) {
               alt={props.name}
             />{" "}
           </div>
+          <div className="text-container">
           <h3>{props.name.toUpperCase()}</h3>
           <div className="price-days-container">
             <span className="price">${props.price}</span>
@@ -94,3 +93,4 @@ export default function Card(props) {
     </div>
   );
 }
+

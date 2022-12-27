@@ -1,11 +1,12 @@
-import logo from '../../assets/icons8-home-app-200.png'
+import logo from "../../assets/icons8-home-app-200.png";
+import './Navbar.css'
 
+export default function Navbar(props) {
+  return (
+  
+      <nav>
+        <img src={logo} alt="house in the clouds" className="nav-logo" />
+      </nav>
 
-export default function Navbar(){
-    return(
-        <nav>
-         <img src={logo} alt = "house in the clouds" className = "nav-logo"/>
-         <h3 className='logo-name'>Cloud Homes</h3>   
-        </nav>
-    )
+  );
 }

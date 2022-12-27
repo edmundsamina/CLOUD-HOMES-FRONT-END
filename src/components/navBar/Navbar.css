@@ -1,0 +1,21 @@
+nav{
+    display: flex;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+}
+
+.landing-container{
+    display: flex;
+    justify-content: center;
+    background-color: var(--neutralDarkCard);
+    height: 200px;
+    width: 100%;
+}
+
+.nav-logo{
+    height: 150px;
+    padding-top: 10px;
+    padding-left: 20px;
+   
+}

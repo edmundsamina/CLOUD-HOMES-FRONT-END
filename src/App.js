@@ -59,11 +59,13 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+    <Navbar/>
+    <div className="landing-page">
+      
      <Search onClickBuy={clickHandlerBuy} onClickRent={clickHandlerRent} onChange={(e) => {
           setinputData(e.target.value);
         }} />
-
+    </div>
       <select
         defaultValue={"DEFAULT"}
         onChange={(e) => setSortState(e.target.value)}
@@ -82,7 +84,7 @@ function App() {
         array={bedroomOptions}
         onChange={(e) => setBedroomNumber(e.target.value)}
       />
-      <div className="displayContainer">
+      <div className="grid-parent">     
       <div className="cardContainer">{housesArray.sort(sortMethods[sortState].method).map((item) => {
         return (
           <Card
@@ -101,9 +103,8 @@ function App() {
           />
         );
       })}</div>
+      </div> 
       </div>
-      
-    </div>
   );
 }
 
