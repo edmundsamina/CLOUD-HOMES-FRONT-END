@@ -17,23 +17,19 @@ function App() {
   //extracting the original fetch data and updating it to avoid the double click
   const [housesArray] = useFetchSearch(onClickData, 'metaverse', rentBoolean);
   const [sortState, setSortState] = useState("none");
-  const [propertyType, setPropertyType] = useState("");
-  const [bedroomNumber, setBedroomNumber] = useState("")
+  const [propertyFilter, setPropertyFilter] = useState("none")
 
   console.log(housesArray)
   const propertyTypeOptions = [
     "House",
     "Flat",
-    "Bungalow",
     "Cottage",
-    "Tent",
-    "Estate",
-    "Cave",
+    "Themed",
   ];
 
+  const bedroomOptions = ["none", "1","2","3","4","5+"]
 
-
-  const bedroomOptions = ["Studio","1","2","3","4","5+"]
+  
  
   //sets the rent boolean to be false, because we want homes to buy and also passes the input data once completed
   function clickHandlerBuy(e) {
@@ -57,6 +53,22 @@ function App() {
     descending: { method: (a, b) => (a.price > b.price ? -1 : 1) },
   };
 
+  const filterMethods = {
+    none: { method: house => Array},
+    "1": { method: house => house.bedrooms === Number(propertyFilter)},
+    "2": { method: house => house.bedrooms === Number(propertyFilter)},
+    "3": { method: house => house.bedrooms === Number(propertyFilter)},
+    "4": { method: house => house.bedrooms === Number(propertyFilter)},
+   "5+": { method:  house => house.bedrooms > Number(propertyFilter[0])},
+   "House": {method: house => house.property_type === propertyFilter.toLowerCase()},
+    "Flat": {method: house => house.property_type === propertyFilter.toLowerCase()},
+    "Bungalow": {method: house => house.property_type === propertyFilter.toLowerCase()},
+    "Cottage": {method: house => house.property_type === propertyFilter.toLowerCase()},
+    "Themed": {method: house => house.property_type === propertyFilter.toLowerCase()},
+
+  };
+
+
   return (
     <div className="App">
     <Navbar/>
@@ -76,16 +88,18 @@ function App() {
         <option value="ascending">Price: Lowest to Highest</option>
         <option value="descending">Price: Highest to Lowest</option>
       </select>{" "}
+      {/* propert-type drop down */}
       <DropDown
         array={propertyTypeOptions}
-        onChange={(e) => setPropertyType(e.target.value)}
+        onChange={(e) => setPropertyFilter(e.target.value)}
       />
+       {/* bedroom number drop-down */}
       <DropDown
         array={bedroomOptions}
-        onChange={(e) => setBedroomNumber(e.target.value)}
+        onChange={(e) => setPropertyFilter(e.target.value)}
       />
       <div className="grid-parent">     
-      <div className="cardContainer">{housesArray.sort(sortMethods[sortState].method).map((item) => {
+      <div className="cardContainer">{housesArray.sort(sortMethods[sortState].method).filter(filterMethods[propertyFilter].method).map((item) => {
         return (
           <Card
             key={uuidv4()}
@@ -109,3 +123,6 @@ function App() {
 }
 
 export default App;
+//.filter(house => house.bedrooms === bedroomNumber) studio - 4
+//.filter(house => house.bedrooms >= Number(bedroomNumber)) 5+
+//sort(sortMethods[sortState].method)
