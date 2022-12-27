@@ -4,6 +4,16 @@
   src: url('./assets/Righteous-Regular.ttf');
 }
 
+:root {
+  --primaryBlue: rgb(236, 185, 82);
+  --primaryCyan: rgb(251, 221, 159);
+  --neutralDarkMain: #ffffff;
+  --neutralDarkCard: #2D2D2D;
+  --neutralDarkLine: hsl(215, 32%, 27%);
+  --trueNeutral: hsl(0, 0%, 100%);
+  --fontOne: 'Outfit', sans-serif;
+}
+
 .grey {
   color: grey;
 }
