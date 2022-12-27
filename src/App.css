@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Patrick Hand';
-  src: url('./assets/PatrickHand-Regular.ttf');
+  font-family: "Patrick Hand";
+  src: url("./assets/PatrickHand-Regular.ttf");
 }
 
 .grey {
   color: grey;
 }
 
-.App{
+.App {
   height: 100vh;
 }
 
@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  font-family: 'Patrick Hand';
+  font-family: "Patrick Hand";
 }
 
 nav {
@@ -25,45 +25,38 @@ nav {
   width: 100%;
   display: flex;
   padding: 10px 30px;
-
-
 }
 
-.nav--logo{
+.nav--logo {
   max-width: 100px;
 }
 
-
-
-.landing-section{
+.landing-section {
   background-color: aqua;
   height: 500px;
-  
 }
 
-.landing-image{
-  background-image: url('./assets/Untitled\ \(7000\ ×\ 3402px\)\ \(1\).gif');
+.landing-image {
+  background-image: url("./assets/Untitled\ \(7000\ ×\ 3402px\)\ \(1\).gif");
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #C7EDE6;
+  background-color: #c7ede6;
   background-position: center;
   background-size: cover;
   height: 100%;
   width: 100%;
-  
 }
 
-.landing-title{
+.landing-title {
   margin-bottom: 15px;
 }
 
-.landing-text{
+.landing-text {
   margin-top: 0;
 }
 
-
-.card-container{
+.card-container {
   height: 300px;
   width: 200px;
   font-size: 13px;
@@ -77,17 +70,17 @@ nav {
   max-height: 100%;
 }
 
-.card-img{
+.card-img {
   width: 100%;
   border-radius: 9px;
 }
 
-.card-stats{
+.card-stats {
   display: flex;
   align-items: center;
 }
 
-.card-star{
+.card-star {
   height: 14px;
 }
 
@@ -99,7 +92,7 @@ nav {
   color: black;
 }
 
-.landing-container{
+.landing-container {
   padding: 10px;
   display: flex;
   align-items: center;
@@ -110,10 +103,9 @@ nav {
   width: 40%;
 }
 
-.logo-name{
+.logo-name {
   color: rgb(12, 48, 61);
   font-size: 25px;
-
 }
 
 .cardContainer {
@@ -121,13 +113,154 @@ nav {
   width: 70vw;
   display: grid;
   grid-template-columns: repeat(4, auto);
-
-
- 
-
 }
 
-.displayContainer{
+.displayContainer {
   display: flex;
-  justify-content:center;
+  justify-content: center;
+}
+
+/* ******* Pop ups for properties ***** 
+***************************************/
+#modal {
+  
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%px;
+}
+
+#modal:empty {
+  display: none;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
+
+#pop-up-card {
+ 
+  font-family: "Raleway";
+  width: 650px;
+  position: absolute;
+  background: white;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s;
+}
+
+#pop-up-card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#pop-up-navigation {
+  width: 100%;
+  color: #727272;
+  text-transform: uppercase;
+  padding: 20px;
+  border-bottom: 2px solid #efefef;
+  font-size: 12px;
+}
+
+#heart {
+  height: 24px;
+  width: 24px;
+  float: right;
+  margin-top: -3px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#heart:hover {
+  fill: red;
+}
+
+#arrow {
+  float: left;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+#pop-up-image {
+  padding: 30px;
+  width: 45%;
+  text-align: center;
+  float: left;
+  max-height: 240px;
+  max-width: 50%;
+}
+
+#pop-up-description {
+  padding: 30px;
+  float: left;
+  width: 55%;
+  border-left: 2px solid #efefef;
+}
+#pop-up-description,
+h1 {
+  color: #515151;
+  font-weight: 300;
+  padding-top: 15px;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+#pop-up-description,
+h2 {
+  color: #515151;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#pop-up-description,
+h4 {
+  margin: 0;
+  color: #727272;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+#pop-up-description,
+p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #727272;
+  padding: 20px 0;
+  margin: 0;
+}
+
+#pop-up-button {
+  outline: 0;
+  border: 0;
+  background: none;
+  border: 1px solid #d9d9d9;
+  padding: 8px 0px;
+  margin-bottom: 30px;
+  color: #515151;
+  text-transform: uppercase;
+  width: 125px;
+  font-family: inherit;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+#pop-up-button:hover {
+  background: darken(white, 2%);
+  border: 1px solid #aedaa6;
+  color: #aedaa6;
+  cursor: pointer;
 }
