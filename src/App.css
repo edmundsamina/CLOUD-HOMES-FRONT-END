@@ -297,3 +297,40 @@ span{
   cursor: pointer;
 }
 
+.hamburger-menu{
+  fill: black;
+  float: right;
+}
+
+
+#filter-menu {
+  
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#filter-menu:empty {
+  display: none;
+}
+
+.filtering-container {
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+
+ 
+}
+ .sort-price{
+  float:left;
+  align-self: left;
+  color: black;
+ }

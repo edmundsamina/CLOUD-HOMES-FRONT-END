@@ -6,6 +6,8 @@ import Search from "./components/search/Search.js";
 import useFetchSearch from "./hooks/useFetchSearch";
 import DropDown from "./components/DropDown/DropDown";
 import { v4 as uuidv4 } from 'uuid';
+import { BiMenu } from 'react-icons/bi';
+import FilterMenuModal from "./components/Modal/FilterMenuModal";
 
 function App() {
   //input captures the state of the input as the user types
@@ -18,6 +20,8 @@ function App() {
   const [housesArray] = useFetchSearch(onClickData, 'metaverse', rentBoolean);
   const [sortState, setSortState] = useState("none");
   const [propertyFilter, setPropertyFilter] = useState("none")
+  //for hamburger pop up
+  const [showModal, setShowModal] = useState(false);
 
   console.log(housesArray)
   const propertyTypeOptions = [
@@ -78,7 +82,8 @@ function App() {
           setinputData(e.target.value);
         }} />
     </div>
-      <select
+    <div className="filtering-container">
+      Sort: <select className="sort-price"
         defaultValue={"DEFAULT"}
         onChange={(e) => setSortState(e.target.value)}
       >
@@ -88,16 +93,10 @@ function App() {
         <option value="ascending">Price: Lowest to Highest</option>
         <option value="descending">Price: Highest to Lowest</option>
       </select>{" "}
-      {/* propert-type drop down */}
-      <DropDown
-        array={propertyTypeOptions}
-        onChange={(e) => setPropertyFilter(e.target.value)}
-      />
-       {/* bedroom number drop-down */}
-      <DropDown
-        array={bedroomOptions}
-        onChange={(e) => setPropertyFilter(e.target.value)}
-      />
+      Advanced Search: <BiMenu onClick={() => setShowModal(true)} className="hamburger-menu"/>
+      
+      
+      </div>
       <div className="grid-parent">     
       <div className="cardContainer">{housesArray.sort(sortMethods[sortState].method).filter(filterMethods[propertyFilter].method).map((item) => {
         return (
@@ -118,6 +117,25 @@ function App() {
         );
       })}</div>
       </div> 
+      {showModal ? (
+        <FilterMenuModal>
+          <div id="pop-up-card">
+           testing
+           <DropDown
+        array={propertyTypeOptions}
+        onChange={(e) => setPropertyFilter(e.target.value)}
+      />
+       {/* bedroom number drop-down */}
+      <DropDown
+        array={bedroomOptions}
+        onChange={(e) => setPropertyFilter(e.target.value)}
+      />
+              <button id="pop-up-button" onClick={() => setShowModal(false)}>Close</button>
+            
+          </div>
+        
+        </FilterMenuModal>
+      ) : null}
       </div>
   );
 }
