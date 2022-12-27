@@ -91,7 +91,7 @@ function App() {
             key={uuidv4()}
             image={item.image}
             name={item.name}
-            desc={item.desc}
+            desc={item.description}
             location={item.location}
             price={item.price}
             rent={item.rent}

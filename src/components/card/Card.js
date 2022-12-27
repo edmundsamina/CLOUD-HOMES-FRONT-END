@@ -5,6 +5,8 @@ import garden from "../../assets/icons8-tree-planting-96.png";
 import logo from "../../assets/icons8-google-96.png";
 import Modal from "../Modal/Modal.js";
 import { useState } from "react";
+import { FaHeart } from 'react-icons/fa';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 
 export default function Card(props) {
   const [showModal, setShowModal] = useState(false);
@@ -23,6 +25,7 @@ export default function Card(props) {
           </div>
           <div className="text-container">
           <h3>{props.name.toUpperCase()}</h3>
+          
           <div className="price-days-container">
             <span className="price">${props.price}</span>
             {props.rent ? (
@@ -70,18 +73,18 @@ export default function Card(props) {
         <Modal>
           <div id="pop-up-card">
             <nav id="pop-up-navigation">
-              <img id="arrow" />
-              <img id="heart" />
+              <FaLongArrowAltLeft id="arrow" />back to results
+              <FaHeart id="heart" />
             </nav>
             <div >
               <img id="pop-up-image" src={props.image}></img>
             </div>
             <div id="pop-up-description">
-              <h2>{props.name}</h2>
-              <h4>{props.metaverse} metaverse</h4>
-              <h1>£{props.price}</h1>
-              <p>
-               {props.description}
+              <h2 id="pop-up-description-h2">{props.name}</h2>
+              <h4 id="pop-up-description-h4">{props.metaverse} metaverse</h4>
+              <h1 id="pop-up-description-h1">£{props.price}</h1>
+              <p id="pop-up-description-p">
+               {props.desc}
               </p>
               <button id="pop-up-button">Book a virtual tour</button>
               <button id="pop-up-button" onClick={() => setShowModal(false)}>Close</button>
