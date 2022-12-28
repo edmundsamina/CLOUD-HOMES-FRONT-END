@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal.js";
 import { useState } from "react";
 import { FaHeart } from 'react-icons/fa';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
-import icon from '../../assets/company logo/icons8-google-750.png'
+import companyIcons from '../../assets/companyIcons'
 
 export default function Card(props) {
   const [showModal, setShowModal] = useState(false);
@@ -22,7 +22,7 @@ export default function Card(props) {
               src={props.image}
               alt={props.name}
             />{" "}
-            <div className="meta-company"><img className="company-logo"src={icon} alt='google'/><h5>{props.metaverse}</h5></div>
+            <div className="meta-company"><img className="company-logo"src={companyIcons[props.metaverse]} alt={props.metaverse}/><h5>{props.metaverse}</h5></div>
           </div>
           <div className="text-container">
           <h3>{props.name.toUpperCase()}</h3>
