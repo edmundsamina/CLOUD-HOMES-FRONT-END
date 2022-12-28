@@ -4,7 +4,7 @@ export default function DropDown( { array, onChange }) {
   return (
     <select className='dropdown' onChange={onChange}>
       {array.map((item) => (
-        <option key={uuidv4()} value={item}>{item}</option>
+        <option className="option" key={uuidv4()} value={item}>{item}</option>
       ))}
     </select>
   );
