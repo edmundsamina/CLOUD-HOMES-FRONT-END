@@ -11,14 +11,15 @@
     padding: 0;
     margin:0;
     font-family: 'Outfit';
-    color: white;
+ 
 }
 
 .card{
     background-color:var(--neutralDarkCard);
     width: 275px;
-    max-height: 360px;
+    max-height: 340px;
     border-radius: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     
 }
 
@@ -28,33 +29,34 @@
 }
 
 .image-container{
+    position: relative;
     width: 100%;
     height: 200px;
    
+}
+
+.image-container:hover{
+    opacity: 0.5;
 }
 
 .img{
    width: 100%;
    height: 100%;
    border-radius: 10px 10px 0px 0px;
+   cursor: pointer;
  
    
 }
 
 h3{
     color: var(--trueNeutral);
+    letter-spacing: 0.1em;
     padding-bottom: 0.8rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     font-weight: 500;
     font-size: 1.1rem;
 }
 
-p {
-    color: var(--primaryBlue);
-    padding-bottom: 1rem;
-    line-height: 1.5;
-    font-weight: 500;
-}
 
 sub{
     color: var(--primaryBlue);
@@ -79,20 +81,46 @@ footer{
     gap: 5px;
 }
 
+
+/* colour for rent properties card */
 .price-days-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid var( --primaryPink);
+    margin-bottom: 0.8rem;
+   padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.price-days-container > .rent,
+.priceRent{
+    color: var(--primaryPink);
+    letter-spacing: 0.1em;
+
+}
+
+.price-days-container-buy > .buy,
+.priceBuy{
+    color: var(--primaryBlue);
+    letter-spacing: 0.1em;
+}
+/* colour for buy properties card */
+.price-days-container-buy{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
     border-bottom: 1px solid var( --primaryBlue);
     margin-bottom: 0.8rem;
-   
+    font-weight: 500;
 }
 
 .bedrooms-bathrooms{
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+    color: white;
     margin-bottom: 0.8rem;
 }
 
@@ -112,22 +140,31 @@ footer{
     font-size: 0.9rem;
 }
 
-.price{
-    color: var(--primaryCyan);
-    font-weight: 500;
-
-  
-}
-
-.days{
-    color: var(--primaryBlue);
-    font-weight: 500;
-}
-
-.creator-subtitle{
-    color: var(--primaryBlue);
-}
 
 .icon{
     height: 30px;
 }
+
+.meta-company{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: rgba(194, 194, 194, 0.5);
+    letter-spacing: 0.2em;
+    padding: 6px;
+    width: 100%;
+    color:white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.company-logo{
+    padding-left: 5px;
+    height: 20px;
+}
+
+
+

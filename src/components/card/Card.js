@@ -2,11 +2,11 @@ import "./card.css";
 import bedrooms from "../../assets/icons8-bed-96.png";
 import bathrooms from "../../assets/icons8-shower-96.png";
 import garden from "../../assets/icons8-tree-planting-96.png";
-import logo from "../../assets/icons8-google-96.png";
 import Modal from "../Modal/Modal.js";
 import { useState } from "react";
 import { FaHeart } from 'react-icons/fa';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
+import icon from '../../assets/company logo/icons8-google-750.png'
 
 export default function Card(props) {
   const [showModal, setShowModal] = useState(false);
@@ -22,18 +22,24 @@ export default function Card(props) {
               src={props.image}
               alt={props.name}
             />{" "}
+            <div className="meta-company"><img className="company-logo"src={icon} alt='google'/><h5>{props.metaverse}</h5></div>
           </div>
           <div className="text-container">
           <h3>{props.name.toUpperCase()}</h3>
           
-          <div className="price-days-container">
-            <span className="price">${props.price}</span>
+          
             {props.rent ? (
+              <div   className="price-days-container">
+              <span className="priceRent">${props.price}</span>
               <p className="rent">Rent</p>
+              </div>
             ) : (
+              <div   className="price-days-container-buy">
+            <span className="priceBuy">${props.price}</span>
               <p className="buy">Buy</p>
+              </div>
             )}
-          </div>
+         
           <div className="bedrooms-bathrooms">
             <span className="bedrooms">
               <img className="icon" src={bedrooms} alt="bedroom icon" />

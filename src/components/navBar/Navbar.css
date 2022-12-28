@@ -1,7 +1,7 @@
 nav{
     display: flex;
     background-color: white;
-    height: 50px;
+    height: 70px;
     width: 100%;
 }
 
@@ -9,13 +9,11 @@ nav{
     display: flex;
     justify-content: center;
     background-color: var(--neutralDarkCard);
-    height: 200px;
-    width: 100%;
+    width: 50%;
 }
 
 .nav-logo{
-    height: 150px;
-    padding-top: 10px;
+    height: 140px;
     padding-left: 20px;
    
 }
