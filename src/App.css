@@ -2,6 +2,8 @@
 
   font-family: 'Rightous';
   src: url('./assets/Righteous-Regular.ttf');
+  font-family: 'Raleway';
+  src: url("./assets/Raleway-VariableFont_wght.ttf")
 }
 
 :root {
@@ -171,7 +173,6 @@ span{
 
 
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
 
 #pop-up-card {
  
@@ -186,6 +187,7 @@ span{
   transform: translate(-50%, -50%);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: all 0.3s;
+  
 }
 
 #pop-up-card:hover {
@@ -199,6 +201,9 @@ span{
   padding: 20px;
   border-bottom: 2px solid #efefef;
   font-size: 12px;
+  height:44px;
+  font-family: 'Raleway', arial;
+  
 }
 
 #heart {
@@ -241,6 +246,8 @@ span{
   float: left;
   width: 55%;
   border-left: 2px solid #efefef;
+  
+  
 }
 #pop-up-description-h1 {
   color: #515151;
@@ -249,6 +256,7 @@ span{
   margin: 0;
   font-size: 30px;
   font-weight: 300;
+  font-family: 'Raleway', arial;
 }
 
 #pop-up-description-h2 {
@@ -256,12 +264,13 @@ span{
   margin: 0;
   text-transform: uppercase;
   font-weight: 500;
+  font-family: 'Raleway', arial;
 }
 
 #pop-up-description-h4 {
   margin: 0;
   color: #727272;
-  
+  font-family: 'Raleway', arial;
   font-weight: 500;
   font-size: 12px;
 }
@@ -272,6 +281,10 @@ span{
   color: #727272;
   padding: 20px 0;
   margin: 0;
+  overflow: auto;
+  max-height: 30vh;
+  font-family: 'Raleway', arial;
+  
 }
 
 #pop-up-button {
@@ -326,11 +339,96 @@ span{
   align-items: center;
   justify-content: center;
   height: 50px;
+  color: black;
 
  
 }
- .sort-price{
+ .sort-price, option{
   float:left;
   align-self: left;
   color: black;
  }
+
+ span.msg,
+span.choose {
+  color: #555;
+  padding: 5px 0 10px;
+  display: inherit
+}
+.container {
+  width: 500px;
+  margin: 50px auto 0;
+  text-align: center
+}
+
+/*Styling Selectbox*/
+.dropdown {
+  width: 300px;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgb(204, 204, 204);
+  transition: all .5s ease;
+  position: relative;
+  font-size: 14px;
+  color: #474747;
+  height: 100%;
+  text-align: left
+}
+.dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 10px
+}
+.dropdown .select > i {
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 20px
+}
+.dropdown:hover {
+    box-shadow: 0 0 4px rgb(204, 204, 204)
+}
+.dropdown:active {
+    background-color: #f8f8f8
+}
+.dropdown.active:hover,
+.dropdown.active {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 2px 2px 0 0;
+    background-color: #f8f8f8
+}
+.dropdown.active .select > i {
+    transform: rotate(-90deg)
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0 1px 2px 2px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+.dropdown .dropdown-menu option {
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+} 
+.dropdown .dropdown-menu {
+    padding: 0;
+    list-style: none
+}
+.dropdown .dropdown-menu option:hover {
+    background-color: #f2f2f2
+}
+.dropdown .dropdown-menu option:active {
+    background-color: #e2e2e2
+}

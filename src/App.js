@@ -83,17 +83,17 @@ function App() {
         }} />
     </div>
     <div className="filtering-container">
-      Sort: <select className="sort-price"
+      Sort: <select className="dropdown"
         defaultValue={"DEFAULT"}
         onChange={(e) => setSortState(e.target.value)}
       >
         <option value="DEFAULT" disabled>
-          None
+          Sort by price
         </option>
         <option value="ascending">Price: Lowest to Highest</option>
         <option value="descending">Price: Highest to Lowest</option>
       </select>{" "}
-      Advanced Search: <BiMenu onClick={() => setShowModal(true)} className="hamburger-menu"/>
+      <button className="hamburger-menu"> Filter <BiMenu onClick={() => setShowModal(true)} /></button>
       
       
       </div>
