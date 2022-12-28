@@ -7,7 +7,9 @@ import useFetchSearch from "./hooks/useFetchSearch";
 import DropDown from "./components/DropDown/DropDown";
 import { v4 as uuidv4 } from "uuid";
 import { BiMenu } from "react-icons/bi";
+import { IoMdClose } from "react-icons/io";
 import FilterMenuModal from "./components/Modal/FilterMenuModal";
+import logo from "./assets/icons8-home-app-200.png";
 
 function App() {
   //input captures the state of the input as the user types
@@ -25,7 +27,7 @@ function App() {
 
   console.log(housesArray);
   const propertyTypeOptions = ["House", "Flat", "Cottage", "Themed"];
-
+ const bathroomOptions = ["none", "1", "2", "3", "4", "5+"]
   const bedroomOptions = ["none", "1", "2", "3", "4", "5+"];
 
   //sets the rent boolean to be false, because we want homes to buy and also passes the input data once completed
@@ -141,19 +143,23 @@ function App() {
               array={bedroomOptions}
               onChange={(e) => setPropertyFilter(e.target.value)}
             /> */}
-            <div class='signup-container'>
+            <div class='filter-pop-up-container'>
   <div class='left-container'>
     <h1>
   
       CLOUD HOMES
     </h1>
-    <div class='puppy'>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png'/>
+    <div class='pop-up-logo'>
+      <img src={logo}/>
     </div>
   </div>
   <div class='right-container'>
+  <button id="close" className="close-button" onClick={() => setShowModal(false)}>
+              Close <IoMdClose />
+            </button>
     <header>
-      <h1>Search for your next adventure</h1>
+   
+      <h1>The future starts here</h1>
       <div class='set'>
         <div class='pets-name'>
           <label for='pets-name'>Metaverse</label>
@@ -181,7 +187,8 @@ function App() {
         </div>
       </div>
       <div class='set'>
-        <div class='pets-gender'>
+       
+      <div class='pets-gender'>
           <label for='pet-gender-female'>Garden</label>
           <div class='radio-container'>
             <input checked='' id='pet-gender-female' name='pet-gender' type='radio' value='female'/>
@@ -191,14 +198,12 @@ function App() {
           </div>
         </div>
         <div class='pets-spayed-neutered'>
-          <label for='pet-spayed'>Spayed or Neutered</label>
-          <div class='radio-container'>
-            <input checked='' id='pet-spayed' name='spayed-neutered' type='radio' value='spayed'/>
-            <label for='pet-spayed'>Spayed</label>
-            <input id='pet-neutered' name='spayed-neutered' type='radio' value='neutered'/>
-            <label for='pet-neutered'>Neutered</label>
-          </div>
-        </div>
+          <label for='pets-spayed-neutered'>Number of bathrooms</label>
+          <DropDown
+              array={bathroomOptions}
+              onChange={(e) => setPropertyFilter(e.target.value)}
+            />
+            </div>
         </div>
         <div class='set'>
         <div class='pets-name'>
@@ -215,9 +220,7 @@ function App() {
     </header>
     <footer>
       <div class='set'>
-      <button id="pop-up-button" onClick={() => setShowModal(false)}>
-              Close
-            </button>
+      
         <button id='next'>Search</button>
       </div>
     </footer>

@@ -355,7 +355,7 @@ span {
   color: black;
 }
 
-.signup-container {
+.filter-pop-up-container {
   display: grid;
   grid-template-areas: "left right";
   max-width: 900px;
@@ -397,12 +397,14 @@ span {
   transform: rotate(-45deg);
   font-family: "Raleway";
 }
-.left-container .puppy {
-  bottom: -5px;
+.left-container .pop-up-logo {
+  bottom:-1px;
   position: absolute;
   text-align: center;
+  
 }
-.left-container .puppy:before {
+.pop-up-logo
+.left-container .logo:before {
   background: #807182;
   content: "";
   height: 100%;
@@ -413,7 +415,6 @@ span {
   z-index: 1;
 }
 .left-container img {
-  filter: sepia(100%);
   width: 70%;
 }
 
@@ -449,6 +450,8 @@ span {
 }
 .right-container header {
   padding: 40px;
+  padding-top: 0px;
+  margin-top: 0px;
   font-family: "Raleway";
 }
 .right-container label, .right-container input, .right-container .pets-photo {
@@ -460,23 +463,8 @@ span {
   display: grid;
   grid-template-areas: ". .";
 }
-.right-container .pets-photo button {
-  border: none;
-  border-radius: 50%;
-  height: 38px;
-  margin-right: 10px;
-  outline: none;
-  width: 38px;
-}
-.right-container .pets-photo button i {
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 16px;
-}
-.right-container .pets-weight .radio-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+
+
 .right-container footer {
   align-items: center;
   background: #fff;
@@ -490,6 +478,25 @@ span {
   width: 100px;
   border-radius: 19px;
   font-family: "Raleway";
+  padding:0;
+  float: right;
+  margin: 0px;
+}
+.close-button{
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Raleway";
+  background: #807182;
+  border: 1px solid transparent;
+  color: #fff;
+  
+}
+.close-button:hover {
+  background: #171A2B;
+  color: white;
 }
 .right-container footer #back {
   background: #fff;
