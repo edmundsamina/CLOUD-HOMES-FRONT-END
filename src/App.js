@@ -26,19 +26,23 @@ const Client = new QueryClient({
 
 function App() {
   //input captures the state of the input as the user types
-  const [inputData, setinputData] = useState("");
+const [inputData, setinputData] = useState({metaverse: "",
+type: "",
+bedrooms: 0,
+bathrooms: 0});
   //second state to only pass through the input state once the user clicks send, otherwise the useFetch is triggered everytime they type
-  const [onClickData, setOnClickData] = useState("");
+  const [onClickData, setOnClickData] = useState();
   //second paramter of the fetch request, if false then fetches homes for sale
   const [rentBoolean, setRentBoolean] = useState();
   //extracting the original fetch data and updating it to avoid the double click
-  const [housesArray] = useFetchSearch(onClickData, "metaverse", rentBoolean);
+  const [housesArray] = useFetchSearch(onClickData, rentBoolean);
   const [sortState, setSortState] = useState("none");
   const [propertyFilter, setPropertyFilter] = useState("none");
 
   //for hamburger pop up
   const [showModal, setShowModal] = useState(false);
 
+  console.log(inputData)
   const [requestParams, setRequestParams] = useState({
     metaverse: "",
     city: "",
@@ -110,9 +114,19 @@ function App() {
           <Search
             onClickBuy={clickHandlerBuy}
             onClickRent={clickHandlerRent}
-            onChange={(e) => {
-              setinputData(e.target.value);
+            onChangeMeta={(e) => {
+              setinputData({...inputData, metaverse:e.target.value});
             }}
+            onChangeType={(e) => {
+              setinputData({...inputData, type:e.target.value});
+            }}
+            onChangeBed={(e) => {
+              setinputData({...inputData, bedrooms:e.target.value});
+            }}
+            onChangeBath={(e) => {
+              setinputData({...inputData, bathrooms:e.target.value});
+            }}
+        
           />
         </div>
         <div className="filtering-container">
@@ -176,7 +190,7 @@ function App() {
               <div className="left-container">
                 <h1>CLOUD HOMES</h1>
                 <div className="pop-up-logo">
-                  <img src={logo} />
+                  <img src={logo} alt="cloud in the sky"/>
                 </div>
               </div>
               <div className="right-container">
