@@ -515,7 +515,7 @@ span {
   background: #171A2B;
 }
 
-.pets-name label, .pets-breed label, .pets-birthday label, .pets-gender label, .pets-spayed-neutered label, .pets-weight label {
+.metaverse-filter label, .city-filter label, .property-type-filter label, .bedrooms-filter label, .bathrooms-filter label, .garden-filter label, .keyword-filter label {
   display: block;
   margin-bottom: 5px;
 }
@@ -547,7 +547,7 @@ span {
   display: none;
 }
 
-.radio-container input[type=radio]:checked + label {
+.radio-container input[type=radio]:checked  {
   background: #F7B1AB;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }

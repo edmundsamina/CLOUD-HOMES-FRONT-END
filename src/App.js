@@ -10,6 +10,17 @@ import { BiMenu } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import FilterMenuModal from "./components/Modal/FilterMenuModal";
 import logo from "./assets/icons8-home-app-200.png";
+import queryFetchSearch from "./hooks/queryFetchSearch";
+import { useQuery, QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      cacheTime: Infinity,
+    },
+  },
+});
 
 function App() {
   //input captures the state of the input as the user types
@@ -25,8 +36,23 @@ function App() {
   //for hamburger pop up
   const [showModal, setShowModal] = useState(false);
 
+  const [requestParams, setRequestParams] = useState({
+    metaverse: "",
+    city: "",
+    bathrooms: "",
+    bedrooms: "",
+    garden: "",
+    propertyType: "",
+  
+  });
+
+  const results = useQuery(["search", requestParams], queryFetchSearch);
+  const properties = results?.data?.properties ?? [];
+  console.log("request params obj is the next log")
+  console.log(requestParams)
+
   console.log(housesArray);
-  const propertyTypeOptions = ["House", "Flat", "Cottage", "Themed"];
+  const propertyTypeOptions = ["Any,","House", "Flat", "Cottage", "Themed"];
  const bathroomOptions = ["none", "1", "2", "3", "4", "5+"]
   const bedroomOptions = ["none", "1", "2", "3", "4", "5+"];
 
@@ -74,7 +100,9 @@ function App() {
   };
 
   return (
+  
     <div className="App">
+        <QueryClientProvider client={queryClient}>
       <Navbar />
       <div className="landing-page">
         <Search
@@ -143,87 +171,109 @@ function App() {
               array={bedroomOptions}
               onChange={(e) => setPropertyFilter(e.target.value)}
             /> */}
-            <div class='filter-pop-up-container'>
-  <div class='left-container'>
+            <div className='filter-pop-up-container'>
+  <div className='left-container'>
     <h1>
   
       CLOUD HOMES
     </h1>
-    <div class='pop-up-logo'>
+    <div className='pop-up-logo'>
       <img src={logo}/>
     </div>
   </div>
-  <div class='right-container'>
+  <div className='right-container'>
   <button id="close" className="close-button" onClick={() => setShowModal(false)}>
               Close <IoMdClose />
+
             </button>
-    <header>
+    
+      <form onSubmit={(e) => {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          const obj = {
+            metaverse: formData.get("metaverse") ?? "",
+            city: formData.get("city") ?? "",
+            bathrooms: formData.get("bathrooms") ?? "",
+            bedrooms:formData.get("bedrooms") ?? "",
+            garden:formData.get("garden") ?? "",
+            propertyType:formData.get("propertyType") ?? "",
+            rent:formData.get("rent") ?? "",
+            buy:formData.get("buy") ?? "",
+          };
+         
+  
+          setRequestParams(obj);
+        }}>
+        <header>
    
       <h1>The future starts here</h1>
-      <div class='set'>
-        <div class='pets-name'>
-          <label for='pets-name'>Metaverse</label>
-          <input id='pets-name' placeholder="Search Metaverses" type='text'/>
+      <div className='set'>
+        <div className='metaverse-filter'>
+          <label htmlFor='metaverse-filter'>Metaverse</label>
+          <input  name="metaverse" id='metaverse-filter' placeholder="Search Metaverses" type='text'/>
         </div>
-        <div class='pets-name'>
-          <label for='pets-name'>City</label>
-          <input id='pets-name' placeholder="Search Cities" type='text'/>
+        <div className='city-filter'>
+          <label htmlFor='city'>City</label>
+          <input id='city-filter' name="city" placeholder="Search Cities" type='text'/>
         </div>
       </div>
-      <div class='set'>
-        <div class='pets-breed'>
-        <label for='pets-breed'>Property type</label>
-           <DropDown
-              array={propertyTypeOptions}
-              onChange={(e) => setPropertyFilter(e.target.value)}
+      <div className='set'>
+        <div className='property-type-filter'>
+        <label name="propertyType" htmlFor='property-type-filter'>Property type</label>
+           <DropDown name="propertyType"
+              array={propertyTypeOptions} value={propertyTypeOptions} key={propertyTypeOptions}
+              // onChange={(e) => setPropertyFilter(e.target.value)}
             /> 
         </div>
-        <div class='pets-birthday'>
-          <label for='pets-birthday'>Number of bedrooms</label>
-          <DropDown
-              array={bedroomOptions}
-              onChange={(e) => setPropertyFilter(e.target.value)}
+        <div className='bedrooms-filter'>
+          <label for='bedrooms-filter' name="bedrooms">Number of bedrooms</label>
+          <DropDown name="bedrooms"
+              array={bedroomOptions} value={bedroomOptions} key={bedroomOptions}
+              // onChange={(e) => setPropertyFilter(e.target.value)}
             />
         </div>
       </div>
-      <div class='set'>
+      <div className='set'>
        
-      <div class='pets-gender'>
-          <label for='pet-gender-female'>Garden</label>
-          <div class='radio-container'>
-            <input checked='' id='pet-gender-female' name='pet-gender' type='radio' value='female'/>
-            <label for='pet-gender-female'>Yes</label>
-            <input id='pet-gender-male' name='pet-gender' type='radio' value='male'/>
-            <label for='pet-gender-male'>No</label>
+      <div className='garden-filter'>
+          <label htmlFor='garden-filter' name="garden">Garden</label>
+          <div className='radio-container'>
+            <input  checked='' id='garden-filter-true' name='garden-filter' type='radio' value='true'/>
+            <label htmlFor='garden-filter-true'>Yes</label>
+            <input id='garden-filter' name='garden-filter' type='radio' value='false'/>
+            <label htmlFor='garden-filter-false'>No</label>
           </div>
         </div>
-        <div class='pets-spayed-neutered'>
-          <label for='pets-spayed-neutered'>Number of bathrooms</label>
-          <DropDown
+        <div className='bathrooms-filter'>
+          <label htmlFor='bathrooms-filter'name="bathrooms">Number of bathrooms</label>
+          <DropDown name="bathrooms"
               array={bathroomOptions}
-              onChange={(e) => setPropertyFilter(e.target.value)}
+              // onChange={(e) => setPropertyFilter(e.target.value)}
             />
             </div>
         </div>
-        <div class='set'>
-        <div class='pets-name'>
-          <label for='pets-name'>Property Name</label>
-          <input id='pets-name' placeholder="Search for property name" type='text'/>
+        <div className='set'>
+        <div className='name-filter'>
+          <label htmlFor='name-filter'>Property Name</label>
+          <input id='name-filter' placeholder="Search for property name" type='text'/>
         </div>
-        <div class='pets-name'>
-          <label for='pets-name'>Key Word</label>
-          <input id='pets-name' placeholder="key words or features" type='text'/>
+        <div className='keyword-filter'>
+          <label htmlFor='keyword-filter'>Key Word</label>
+          <input id='keyword-filter' placeholder="key words or features" type='text'/>
         </div>
       </div>
       
       
     </header>
     <footer>
-      <div class='set'>
+      <div className='set'>
       
-        <button id='next'>Search</button>
+        <button id='next'>Submit</button>
       </div>
     </footer>
+    </form>
+   
+    
   </div>
 </div>
 
@@ -231,7 +281,9 @@ function App() {
           
         </FilterMenuModal>
       ) : null}
+      </QueryClientProvider>
     </div>
+    
   );
 }
 
