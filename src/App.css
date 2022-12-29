@@ -1,7 +1,9 @@
 @font-face {
-
-  font-family: 'Rightous';
-  src: url('./assets/Righteous-Regular.ttf');
+  font-family: "Rightous";
+  src: url("./assets/Righteous-Regular.ttf");}
+  @font-face {
+  font-family: "Raleway";
+  src: url("./assets/Raleway-VariableFont_wght.ttf");
 }
 
 :root {
@@ -11,10 +13,11 @@
   --realBlue: #b0dbf0;
   --primaryPink: rgba(243, 204, 224);
   --neutralDarkMain: #ffffff;
-  --neutralDarkCard: #2D2D2D;
+  --neutralDarkCard: #2d2d2d;
   --neutralDarkLine: hsl(215, 32%, 27%);
   --trueNeutral: hsl(0, 0%, 100%);
-  --fontOne: 'Outfit', sans-serif;
+  --fontOne: "Outfit", sans-serif;
+  --fontTwo: "Raleway", sans-serif;
 }
 
 .grey {
@@ -24,21 +27,18 @@
 .App {
   height: 100vh;
 
- 
-
 }
 
 * {
   box-sizing: border-box;
- 
-  
 }
 
 body {
-  margin: 0; 
+  margin: 0;
+  font-family: 'Raleway';
 }
 
-.landing-page{
+.landing-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,12 +107,11 @@ nav {
   align-items: center;
 }
 
-
 h3,
 button,
 p,
-span{
-  font-family: 'Rightous';
+span {
+  font-family: "Rightous";
 }
 
 .landing-container {
@@ -137,16 +136,14 @@ span{
   display: grid;
   grid-template-columns: auto auto auto auto;
  row-gap: 40px;
- 
+
 }
 
-.grid-parent{
+.grid-parent {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
- 
 
 .displayContainer {
   display: flex;
@@ -156,7 +153,6 @@ span{
 /* ******* Pop ups for properties ***** 
 ***************************************/
 #modal {
-  
   position: fixed;
   left: 0;
   right: 0;
@@ -172,12 +168,7 @@ span{
   display: none;
 }
 
-
-
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
-
 #pop-up-card {
- 
   font-family: "Raleway";
   width: 60%;
   max-height: 70%;
@@ -202,6 +193,8 @@ span{
   padding: 20px;
   border-bottom: 2px solid #efefef;
   font-size: 12px;
+  height: 44px;
+  font-family: "Raleway", arial;
 }
 
 #heart {
@@ -211,8 +204,7 @@ span{
   margin-top: -3px;
   transition: all 0.3s ease;
   cursor: pointer;
-  fill:  #727272;
- 
+  fill: #727272;
 }
 
 #heart:hover {
@@ -235,7 +227,6 @@ span{
   text-align: center;
   float: left;
   max-height: 400px;
- 
 }
 
 #pop-up-description {
@@ -252,6 +243,7 @@ span{
   margin: 0;
   font-size: 30px;
   font-weight: 300;
+  font-family: "Raleway", arial;
 }
 
 #pop-up-description-h2 {
@@ -259,12 +251,13 @@ span{
   margin: 0;
   text-transform: uppercase;
   font-weight: 500;
+  font-family: "Raleway", arial;
 }
 
 #pop-up-description-h4 {
   margin: 0;
   color: #727272;
-  
+  font-family: "Raleway", arial;
   font-weight: 500;
   font-size: 12px;
 }
@@ -275,6 +268,9 @@ span{
   color: #727272;
   padding: 20px 0;
   margin: 0;
+  overflow: auto;
+  max-height: 30vh;
+  font-family: "Raleway", arial;
 }
 
 #pop-up-button {
@@ -300,3 +296,289 @@ span{
   cursor: pointer;
 }
 
+.hamburger-menu {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid grey;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #3b3b3b;
+  cursor: pointer;
+  display: inline-block;
+  
+  line-height: normal;
+  margin: 0;
+  max-height: 60px;
+  max-width: 150px;
+  text-align: center;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: "Raleway";
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.hamburger-icon {
+  fill: black;
+}
+
+.hamburger-menu:hover {
+  color: #fff;
+  background-color: #1a1a1a;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.hamburger-menu:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+#filter-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#filter-menu:empty {
+  display: none;
+}
+
+.filtering-container {
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  color: black;
+}
+
+.filter-pop-up-container {
+  display: grid;
+  grid-template-areas: "left right";
+  max-width: 900px;
+  font-family: "Raleway";
+  width: 60%;
+  max-height: 70%;
+  position: absolute;
+  background: white;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s;
+}
+
+.left-container {
+  background: #807182;
+  overflow: hidden;
+  padding: 40px 0 0 0;
+  position: relative;
+  text-align: center;
+  width: 300px;
+  font-family: "Raleway";
+}
+.left-container h1 {
+  color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  font-size: 24px;
+  font-family: "Raleway";
+}
+.left-container h1 i {
+  background: #F7B1AB;
+  border-radius: 50%;
+  color: #807182;
+  font-size: 24px;
+  margin-right: 5px;
+  padding: 10px;
+  transform: rotate(-45deg);
+  font-family: "Raleway";
+}
+.left-container .pop-up-logo {
+  bottom:-1px;
+  position: absolute;
+  text-align: center;
+  
+}
+.pop-up-logo
+.left-container .logo:before {
+  background: #807182;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.left-container img {
+  width: 70%;
+}
+
+.right-container {
+  background: #f9c7c2;
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 500px;
+  font-family: "Raleway";
+}
+.right-container h1:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Raleway";
+}
+.right-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.right-container input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+  font-family: "Raleway";
+}
+.right-container input, .right-container label {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: "Raleway";
+}
+.right-container header {
+  padding: 40px;
+  padding-top: 0px;
+  margin-top: 0px;
+  font-family: "Raleway";
+}
+.right-container label, .right-container input, .right-container .pets-photo {
+  width: 176px;
+  font-family: "Raleway";
+}
+.right-container .pets-photo {
+  align-items: center;
+  display: grid;
+  grid-template-areas: ". .";
+}
+
+
+.right-container footer {
+  align-items: center;
+  background: #fff;
+  display: grid;
+  padding: 5px 40px;
+}
+.right-container footer button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Raleway";
+  padding:0;
+  float: right;
+  margin: 0px;
+}
+.close-button{
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Raleway";
+  background: #807182;
+  border: 1px solid transparent;
+  color: #fff;
+  
+}
+.close-button:hover {
+  background: #171A2B;
+  color: white;
+}
+.right-container footer #back {
+  background: #fff;
+  transition: 0.2s all ease-in-out;
+}
+.right-container footer #back:hover {
+  background: #171A2B;
+  color: white;
+}
+.right-container footer #next {
+  background: #807182;
+  border: 1px solid transparent;
+  color: #fff;
+}
+.right-container footer #next:hover {
+  background: #171A2B;
+}
+
+.metaverse-filter label, .city-filter label, .property-type-filter label, .bedrooms-filter label, .bathrooms-filter label, .garden-filter label, .keyword-filter label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.radio-container {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.radio-container label {
+  font-family: "Raleway";
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container input[type=radio] {
+  display: none;
+}
+
+.radio-container input[type=radio]:checked  {
+  background: #F7B1AB;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*DROPDOWNS*/
+.dropdown {
+  min-width: 12em;
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+  min-height: 2em;
+  max-height: 2em;
+  overflow: hidden;
+  top: 0.5em;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  color: var(--neutralDarkCard);
+  outline: none;
+  border: 0.06em solid transparent;
+  border-radius: 1em;
+  background-color: #dee0e2;
+  transition: 0.3s all ease-in-out;
+  font-family: "Raleway";
+}
+
+.option {
+  font-family: "Raleway";
+  color: black;
+}

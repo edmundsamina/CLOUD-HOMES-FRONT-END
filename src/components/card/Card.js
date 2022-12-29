@@ -92,7 +92,7 @@ export default function Card(props) {
               <p id="pop-up-description-p">
                {props.desc}
               </p>
-              <button id="pop-up-button">Book a virtual tour</button>
+              <button id="pop-up-button">Book a tour</button>
               <button id="pop-up-button" onClick={() => setShowModal(false)}>Close</button>
             </div>
           </div>
