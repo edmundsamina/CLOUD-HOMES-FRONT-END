@@ -1,6 +1,7 @@
-async function fetchSearch({ queryKey }) {
+async function queryFetchSearch({ queryKey }) {
     const { metaverse, city, bedrooms, bathrooms, garden, propertyType } = queryKey[1];
     const res = await fetch(
+      // `https://cloudhomesbackend.onrender.com/api/properties`
       `https://cloudhomesbackend.onrender.com/api/properties?city=${city}&metaverse=${metaverse}&bedrooms=${bedrooms}&bathrooms=${bathrooms}&garden=${garden}&propertyType=${propertyType}`
     );
   
@@ -10,4 +11,4 @@ async function fetchSearch({ queryKey }) {
     return res.json();
   }
   
-  export default fetchSearch;
+  export default queryFetchSearch; 
