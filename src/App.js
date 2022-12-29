@@ -23,6 +23,7 @@ const Client = new QueryClient({
   // },
 });
 
+
 function App() {
   //input captures the state of the input as the user types
   const [inputData, setinputData] = useState("");
@@ -34,6 +35,7 @@ function App() {
   const [housesArray] = useFetchSearch(onClickData, "metaverse", rentBoolean);
   const [sortState, setSortState] = useState("none");
   const [propertyFilter, setPropertyFilter] = useState("none");
+
   //for hamburger pop up
   const [showModal, setShowModal] = useState(false);
 
@@ -324,6 +326,3 @@ function App() {
 }
 
 export default App;
-//.filter(house => house.bedrooms === bedroomNumber) studio - 4
-//.filter(house => house.bedrooms >= Number(bedroomNumber)) 5+
-//sort(sortMethods[sortState].method)

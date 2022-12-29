@@ -9,6 +9,9 @@
 :root {
   --primaryBlue: rgb(236, 185, 82);
   --primaryCyan: rgb(251, 221, 159);
+  --primaryYellow:  rgb(251, 221, 159);
+  --realBlue: #b0dbf0;
+  --primaryPink: rgba(243, 204, 224);
   --neutralDarkMain: #ffffff;
   --neutralDarkCard: #2d2d2d;
   --neutralDarkLine: hsl(215, 32%, 27%);
@@ -23,6 +26,7 @@
 
 .App {
   height: 100vh;
+
 }
 
 * {
@@ -38,7 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  height: 210px;
   width: 100%;
   background-color: var(--neutralDarkCard);
 }
@@ -128,16 +132,16 @@ span {
 
 .cardContainer {
   margin-top: 100px;
-  width: 1200px;
+  width:1300px ;
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 50px;
+ row-gap: 40px;
+
 }
 
 .grid-parent {
   display: flex;
   align-items: center;
-
   justify-content: center;
 }
 
