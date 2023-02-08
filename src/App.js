@@ -108,10 +108,26 @@ bathrooms: 0});
 
   //dropdown functions 
 const [show, setShow] = useState(false);
+const [bedroomsShow, setBedroomsShow] = useState(false);
+const [propertyTypeShow, setPropertyTypeShow] = useState(false);
 const [metaverseName, setMetaverseName] = useState('Select Metaverse');
+const [propertyType, setPropertyType] = useState('Select Property Type');
+const [bedrooms, setBedrooms] = useState('Number of Bedrooms');
 
 function dropDown() {
     setShow(!show);
+    setPropertyTypeShow(false);
+    setBedroomsShow(false);
+  }
+  function propertyDropDown() {
+    setPropertyTypeShow(!propertyTypeShow);
+    setShow(false);
+    setBedroomsShow(false);
+  }
+  function bedroomsDropDown() {
+    setBedroomsShow(!propertyTypeShow);
+    setShow(false);
+    setPropertyTypeShow(false);
   }
 
   return (
@@ -122,7 +138,13 @@ function dropDown() {
           <Search
           metaverseName={metaverseName}
           show={show}
+          propertyType={propertyType}
+          propertyTypeShow={propertyTypeShow}
+          bedrooms={bedrooms}
+          bedroomsShow={bedroomsShow}
           dropDown={dropDown}
+          propertyDropDown={propertyDropDown}
+          bedroomsDropDown={bedroomsDropDown}
             onClickBuy={clickHandlerBuy}
             onClickRent={clickHandlerRent}
             metaSelect={(e) => {
@@ -130,12 +152,24 @@ function dropDown() {
               setShow(!show);
               setMetaverseName(e.target.alt);
             }}
-            onChangeType={(e) => {
-              setinputData({...inputData, type:e.target.value});
+            propertyTypeSelect={(e) => {
+              setinputData({...inputData, type:e.target.alt});
+              setPropertyTypeShow(!propertyTypeShow);
+              setPropertyType(e.target.alt);
+              
             }}
-            onChangeBed={(e) => {
-              setinputData({...inputData, bedrooms:e.target.value});
+            bedroomsSelect={(e) => {
+              setinputData({...inputData, bedrooms: Number(e.target.value)});
+             
+              setBedroomsShow(!bedroomsShow);
+              setBedrooms(e.target.value);
             }}
+            // onChangeType={(e) => {
+            //   setinputData({...inputData, type:e.target.value});
+            // }}
+            // onChangeBed={(e) => {
+            //   setinputData({...inputData, bedrooms:e.target.value});
+            // }}
             onChangeBath={(e) => {
               setinputData({...inputData, bathrooms:e.target.value});
             }}

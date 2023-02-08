@@ -67,19 +67,98 @@ export default function Search(props) {
             )}
           </div>
     
+          <div className= "property-dropdown">
+            <button onClick={props.propertyDropDown} className="dropbtn">
+              {props.propertyType}
+            </button>
+            {props.propertyTypeShow && (
+              <div id="myDropdown" className="dropdown-content">
+                <img
+                  onClick={props.propertyTypeSelect}
+                  id="house"
+                  src="https://img.icons8.com/arcade/256/home.png"
+                  alt="house"
+                />
+                <img
+                  onClick={props.propertyTypeSelect}
+                  id="flat"
+                  src="https://img.icons8.com/arcade/256/apartment.png"
+                  alt="flat"
+                />
+                <img
+                  onClick={props.propertyTypeSelect}
+                  id="themed"
+                  src="https://img.icons8.com/arcade/256/castle.png"
+                  alt="themed"
+                />
+                <img
+                  onClick={props.propertyTypeSelect}
+                  id="studio"
+                  src="https://img.icons8.com/arcade/256/room.png"
+                  alt="studio"
+                />
+                <img
+                  onClick={props.propertyTypeSelect}
+                  id="cottage"
+                  src="https://img.icons8.com/arcade/256/gingerbread-house.png"
+                  alt="cottage"
+                />
+                <img
+                  onClick={props.propertyTypeSelect}
+                  id="hotel"
+                  src="https://img.icons8.com/arcade/256/city-buildings.png"
+                  alt="hotel"
+                />
+              </div>
+            )}
+          </div>
 
-        <input
+          <div className= "bedrooms-dropdown">
+            <button onClick={props.bedroomsDropDown} className="dropbtn">
+              {props.bedrooms}
+            </button>
+            {props.bedroomsShow && (
+              <div id="myDropdown" className="dropdown-content">
+                
+                <button
+                  onClick={props.bedroomsSelect}
+                  value="1"
+                >1</button>
+                  <button
+                  onClick={props.bedroomsSelect}
+                  value="2"
+                >2</button>
+                  <button
+                  onClick={props.bedroomsSelect}
+                  value="3"
+                >3</button>  
+                <button
+                onClick={props.bedroomsSelect}
+                value="4"
+              >4</button>
+                <button
+                  onClick={props.bedroomsSelect}
+                  value="5"
+                >5+</button>
+              </div>
+              
+            )}
+          </div>
+
+
+
+        {/* <input
           placeholder="property-type"
           className="search-propertyType"
           type="text"
           onChange={props.onChangeType}
-        ></input>
-        <input
+        ></input> */}
+        {/* <input
           placeholder="bedrooms"
           className="search-bedrooms"
           type="text"
           onChange={props.onChangeBed}
-        ></input>
+        ></input> */}
         <input
           placeholder="bathrooms"
           className="search-bathrooms"
