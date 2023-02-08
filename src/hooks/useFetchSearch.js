@@ -7,7 +7,7 @@ export default function useFetchSearch(onClickData, rentBoolean) {
     console.log(onClickData)
     
     useEffect(() => {
-        const domain="http://localhost:3002"
+        const domain="https://cloudhomesbackend.onrender.com"
         //"https://cloudhomesbackend.onrender.com";
         async function getData() {
         const response = await fetch(`${domain}/api/properties/?metaverse=${onClickData.metaverse}&rent=${rentBoolean}&type=${onClickData.type}&bedrooms=${onClickData.bedrooms}&bathrooms=${onClickData.bathrooms}`);
