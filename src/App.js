@@ -6,12 +6,10 @@ import Search from "./components/search/Search.js";
 import useFetchSearch from "./hooks/useFetchSearch";
 import DropDown from "./components/DropDown/DropDown";
 import { v4 as uuidv4 } from "uuid";
-import { BiMenu } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import FilterMenuModal from "./components/Modal/FilterMenuModal";
 import logo from "./assets/icons8-home-app-200.png";
-import queryFetchSearch from "./hooks/queryFetchSearch";
-import { useQuery, QueryClient, QueryClientProvider } from "react-query";
+import {  QueryClient, QueryClientProvider } from "react-query";
 
 //config for query - infinity means it won't update while the user has the page open, can put time in ms here and it will check for new stuff
 const Client = new QueryClient({
@@ -109,23 +107,39 @@ bathrooms: 0});
   //dropdown functions 
 const [show, setShow] = useState(false);
 const [bedroomsShow, setBedroomsShow] = useState(false);
+const [bathroomsShow, setBathroomsShow] = useState(false);
+
 const [propertyTypeShow, setPropertyTypeShow] = useState(false);
 const [metaverseName, setMetaverseName] = useState('Select Metaverse');
 const [propertyType, setPropertyType] = useState('Select Property Type');
-const [bedrooms, setBedrooms] = useState('Number of Bedrooms');
+const [bedrooms, setBedrooms] = useState('Bedrooms');
+const [bathrooms, setBathrooms] = useState('Bathrooms');
+
 
 function dropDown() {
     setShow(!show);
     setPropertyTypeShow(false);
     setBedroomsShow(false);
+    setBathroomsShow(false)
+
   }
   function propertyDropDown() {
     setPropertyTypeShow(!propertyTypeShow);
     setShow(false);
     setBedroomsShow(false);
+    setBathroomsShow(false)
+
   }
   function bedroomsDropDown() {
     setBedroomsShow(!propertyTypeShow);
+    setShow(false);
+    setPropertyTypeShow(false);
+    setBathroomsShow(false)
+
+  }
+  function bathroomsDropDown() {
+    setBathroomsShow(!bathroomsShow)
+    setBedroomsShow(false);
     setShow(false);
     setPropertyTypeShow(false);
   }
@@ -140,11 +154,14 @@ function dropDown() {
           show={show}
           propertyType={propertyType}
           propertyTypeShow={propertyTypeShow}
+          bathroomsShow={bathroomsShow}
           bedrooms={bedrooms}
           bedroomsShow={bedroomsShow}
+          bathrooms={bathrooms}
           dropDown={dropDown}
           propertyDropDown={propertyDropDown}
           bedroomsDropDown={bedroomsDropDown}
+          bathroomsDropDown={bathroomsDropDown}
             onClickBuy={clickHandlerBuy}
             onClickRent={clickHandlerRent}
             metaSelect={(e) => {
@@ -164,14 +181,11 @@ function dropDown() {
               setBedroomsShow(!bedroomsShow);
               setBedrooms(e.target.value);
             }}
-            // onChangeType={(e) => {
-            //   setinputData({...inputData, type:e.target.value});
-            // }}
-            // onChangeBed={(e) => {
-            //   setinputData({...inputData, bedrooms:e.target.value});
-            // }}
-            onChangeBath={(e) => {
-              setinputData({...inputData, bathrooms:e.target.value});
+        
+            bathroomsSelect={(e) => {
+              setinputData({...inputData, bathrooms: Number(e.target.value)});
+              setBathroomsShow(!bathroomsShow)
+              setBathrooms(e.target.value)
             }}
         
           />
@@ -192,10 +206,6 @@ function dropDown() {
               Price: Highest to Lowest
             </option>
           </select>{" "}
-          <button className="hamburger-menu" onClick={() => setShowModal(true)}>
-            {" "}
-            Filter <BiMenu className="hamburger-icon" />
-          </button>
         </div>
         <div className="grid-parent">
           <div className="cardContainer">
