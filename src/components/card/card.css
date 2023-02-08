@@ -179,6 +179,7 @@ footer{
 .bedbath {
     display: flex;
     flex-direction: column;
+    padding-right: 15px;
 }
 .bedbath p {
  

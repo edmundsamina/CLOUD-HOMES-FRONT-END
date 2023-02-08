@@ -78,7 +78,7 @@ export default function Card(props) {
         <Modal>
           <div id="pop-up-card">
             <nav id="pop-up-navigation">
-              <FaLongArrowAltLeft id="arrow" />back to results
+              <div className="back-pop" onClick={() => setShowModal(false)}><FaLongArrowAltLeft id="arrow" />back to results </div>
               <FaHeart id="heart" />
             </nav>
             <div >
