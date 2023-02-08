@@ -106,16 +106,29 @@ bathrooms: 0});
     },
   };
 
+  //dropdown functions 
+const [show, setShow] = useState(false);
+const [metaverseName, setMetaverseName] = useState('Select Metaverse');
+
+function dropDown() {
+    setShow(!show);
+  }
+
   return (
     <div className="App">
       <QueryClientProvider client={Client}>
         <Navbar />
         <div className="landing-page">
           <Search
+          metaverseName={metaverseName}
+          show={show}
+          dropDown={dropDown}
             onClickBuy={clickHandlerBuy}
             onClickRent={clickHandlerRent}
-            onChangeMeta={(e) => {
-              setinputData({...inputData, metaverse:e.target.value});
+            metaSelect={(e) => {
+              setinputData({...inputData, metaverse:e.target.alt});
+              setShow(!show);
+              setMetaverseName(e.target.alt);
             }}
             onChangeType={(e) => {
               setinputData({...inputData, type:e.target.value});
