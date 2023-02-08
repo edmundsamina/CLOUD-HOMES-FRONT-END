@@ -5,8 +5,7 @@ export default function useFetch() {
     const [housesArray, sethousesArray] = useState([]);
 
     useEffect(() => {
-        const domain="http://localhost:3002"
-        //"https://cloudhomesbackend.onrender.com";
+        const domain="https://cloudhomesbackend.onrender.com";
         async function getData() {
         const response = await fetch(`${domain}/api/properties`);
             const data = await response.json();
