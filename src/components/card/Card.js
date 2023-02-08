@@ -83,7 +83,7 @@ export default function Card(props) {
               <FaHeart id="heart" />
             </nav>
             <div >
-              <img id="pop-up-image" src={props.image}></img>
+              <img id="pop-up-image" src={props.image} alt="house"></img>
             </div>
             <div id="pop-up-description">
               <h2 id="pop-up-description-h2">{props.name}</h2>

@@ -4,11 +4,7 @@ import Navbar from "./components/navBar/Navbar";
 import Card from "./components/card/Card";
 import Search from "./components/search/Search.js";
 import useFetchSearch from "./hooks/useFetchSearch";
-import DropDown from "./components/DropDown/DropDown";
 import { v4 as uuidv4 } from "uuid";
-import { IoMdClose } from "react-icons/io";
-import FilterMenuModal from "./components/Modal/FilterMenuModal";
-import logo from "./assets/icons8-home-app-200.png";
 import {  QueryClient, QueryClientProvider } from "react-query";
 
 //config for query - infinity means it won't update while the user has the page open, can put time in ms here and it will check for new stuff
@@ -35,20 +31,9 @@ bathrooms: 0});
   //extracting the original fetch data and updating it to avoid the double click
   const [housesArray] = useFetchSearch(onClickData, rentBoolean);
   const [sortState, setSortState] = useState("none");
-  const [propertyFilter, setPropertyFilter] = useState("none");
 
-  //for hamburger pop up
-  const [showModal, setShowModal] = useState(false);
 
-  console.log(inputData)
-  const [requestParams, setRequestParams] = useState({
-    metaverse: "",
-    city: "",
-    bathrooms: "",
-    bedrooms: "",
-    garden: "",
-    propertyType: "",
-  });
+  
   //first argument is a unique id for keeping track of fetching - descriptive word is convention
   // const results = useQuery(["search", requestParams], queryFetchSearch);
   // const properties = results?.data?.properties ?? [];
@@ -56,10 +41,7 @@ bathrooms: 0});
   // console.log("request params obj is the next log");
   // console.log(properties);
 
-  console.log(housesArray);
-  const propertyTypeOptions = ["Any,", "House", "Flat", "Cottage", "Themed"];
-  const bathroomOptions = ["none", "1", "2", "3", "4", "5+"];
-  const bedroomOptions = ["none", "1", "2", "3", "4", "5+"];
+ 
 
   //sets the rent boolean to be false, because we want homes to buy and also passes the input data once completed
   function clickHandlerBuy(e) {
@@ -80,29 +62,7 @@ bathrooms: 0});
     descending: { method: (a, b) => (a.price > b.price ? -1 : 1) },
   };
 
-  const filterMethods = {
-    none: { method: (house) => Array },
-    1: { method: (house) => house.bedrooms === Number(propertyFilter) },
-    2: { method: (house) => house.bedrooms === Number(propertyFilter) },
-    3: { method: (house) => house.bedrooms === Number(propertyFilter) },
-    4: { method: (house) => house.bedrooms === Number(propertyFilter) },
-    "5+": { method: (house) => house.bedrooms > Number(propertyFilter[0]) },
-    House: {
-      method: (house) => house.property_type === propertyFilter.toLowerCase(),
-    },
-    Flat: {
-      method: (house) => house.property_type === propertyFilter.toLowerCase(),
-    },
-    Bungalow: {
-      method: (house) => house.property_type === propertyFilter.toLowerCase(),
-    },
-    Cottage: {
-      method: (house) => house.property_type === propertyFilter.toLowerCase(),
-    },
-    Themed: {
-      method: (house) => house.property_type === propertyFilter.toLowerCase(),
-    },
-  };
+  
 
   //dropdown functions 
 const [show, setShow] = useState(false);
@@ -209,10 +169,7 @@ function dropDown() {
         </div>
         <div className="grid-parent">
           <div className="cardContainer">
-            {housesArray
-              .sort(sortMethods[sortState].method)
-              .filter(filterMethods[propertyFilter].method)
-              .map((item) => {
+            {housesArray.sort(sortMethods[sortState].method).map((item) => {
                 return (
                   <Card
                     key={uuidv4()}
@@ -232,17 +189,9 @@ function dropDown() {
               })}
           </div>
         </div>
-        {showModal ? (
+        {/* {showModal ? (
           <FilterMenuModal>
-            {/* <DropDown
-              array={propertyTypeOptions}
-              onChange={(e) => setPropertyFilter(e.target.value)}
-            /> */}
-
-            {/* <DropDown
-              array={bedroomOptions}
-              onChange={(e) => setPropertyFilter(e.target.value)}
-            /> */}
+  
             <div className="filter-pop-up-container">
               <div className="left-container">
                 <h1>CLOUD HOMES</h1>
@@ -390,7 +339,7 @@ function dropDown() {
               </div>
             </div>
           </FilterMenuModal>
-        ) : null}
+        ) : null} */}
       </QueryClientProvider>
     </div>
   );
