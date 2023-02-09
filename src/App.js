@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Navbar from "./components/navBar/Navbar";
 import Card from "./components/card/Card";
+import NoPropertiesFound from "./components/noPropertiesFound/NoPropertiesFound";
 import Search from "./components/search/Search.js";
 import useFetchSearch from "./hooks/useFetchSearch";
 import { v4 as uuidv4 } from "uuid";
@@ -168,6 +169,7 @@ function dropDown() {
           </select>{" "}
         </div>
         <div className="grid-parent">
+          {housesArray.length < 1 ? (<NoPropertiesFound/>) : (
           <div className="cardContainer">
             {housesArray.sort(sortMethods[sortState].method).map((item) => {
                 return (
@@ -187,7 +189,7 @@ function dropDown() {
                   />
                 );
               })}
-          </div>
+          </div>)}
         </div>
         {/* {showModal ? (
           <FilterMenuModal>

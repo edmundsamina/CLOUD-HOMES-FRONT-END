@@ -1,0 +1,24 @@
+.no-props-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+padding: 25px;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 3px -3px 3px 1px inset;
+  
+    gap: 30px;
+  } 
+  .no-props-container h2 {
+    font-family: "Rightous";
+  }
+
+  @font-face {
+    font-family: "Rightous";
+    src: url("../../assets/Righteous-Regular.ttf");}
