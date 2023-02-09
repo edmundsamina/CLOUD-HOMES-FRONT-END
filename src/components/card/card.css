@@ -170,3 +170,26 @@ footer{
 
 
 
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+.bedbath {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+.bedbath p {
+ 
+  
+text-align: right;
+font-weight: 400;
+color: #2D2D2D;
+font-family: "Raleway";
+font-size: 0.7rem;
+}
+.popup-icon{
+    width: 15px;
+}
