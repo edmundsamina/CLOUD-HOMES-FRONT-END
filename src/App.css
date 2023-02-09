@@ -183,7 +183,7 @@ span {
 }
 
 #pop-up-card:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 17px 0 #00000033, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #pop-up-navigation {
@@ -194,6 +194,12 @@ span {
   border-bottom: 2px solid #efefef;
   font-size: 12px;
   height: 44px;
+  font-family: "Raleway", arial;
+
+  justify-content: space-between;
+}
+.back-pop {
+  cursor: pointer;
   font-family: "Raleway", arial;
 }
 
