@@ -91,7 +91,7 @@ function dropDown() {
 
   }
   function bedroomsDropDown() {
-    setBedroomsShow(!propertyTypeShow);
+    setBedroomsShow(true);
     setShow(false);
     setPropertyTypeShow(false);
     setBathroomsShow(false)
