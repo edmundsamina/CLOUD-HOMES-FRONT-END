@@ -4,8 +4,8 @@ import bathrooms from "../../assets/icons8-shower-96.png";
 import garden from "../../assets/icons8-tree-planting-96.png";
 import Modal from "../Modal/Modal.js";
 import { useState } from "react";
-import { FaHeart } from 'react-icons/fa';
-import { FaLongArrowAltLeft } from 'react-icons/fa';
+import { FaHeart, FaBed, FaBath, FaLongArrowAltLeft } from 'react-icons/fa';
+import { TbPlant } from 'react-icons/tb'
 import companyIcons from '../../assets/companyIcons'
 
 export default function Card(props) {
@@ -47,17 +47,16 @@ export default function Card(props) {
             </span>
             {props.garden ? (
               <span className="garden">
-                {" "}
                 <img
                   className="icon"
                   src={garden}
                   alt="planting icon"
-                /> YES{" "}
+                /> YES
               </span>
             ) : (
               <span className="garden">
                 <img className="icon" src={garden} alt="planting icon" />
-                NO{" "}
+                NO
               </span>
             )}
             <span className="bathrooms">
@@ -73,22 +72,24 @@ export default function Card(props) {
           </div>
         </div>
       </div>
-      {/* ); */}
-      {/* })} */}
+
       {showModal ? (
         <Modal>
           <div id="pop-up-card">
             <nav id="pop-up-navigation">
-              <FaLongArrowAltLeft id="arrow" />back to results
+              <div className="back-pop" onClick={() => setShowModal(false)}><FaLongArrowAltLeft id="arrow" />back to results </div>
               <FaHeart id="heart" />
             </nav>
             <div >
-              <img id="pop-up-image" src={props.image} alt="house"></img>
+              <img id="pop-up-image" src={props.image} alt="property image" ></img>
             </div>
             <div id="pop-up-description">
               <h2 id="pop-up-description-h2">{props.name}</h2>
               <h4 id="pop-up-description-h4">{props.metaverse} metaverse</h4>
-              <h1 id="pop-up-description-h1">£{props.price}</h1>
+              <div className="stats">
+              <div><h1 id="pop-up-description-h1">£{props.price}</h1></div>
+              <div className="bedbath"><div><p> <FaBed/> {props.bedrooms} bedrooms</p></div><div><p><FaBath/> {props.bathrooms} bathrooms</p></div>{props.garden ? (<div><p><TbPlant/>Garden</p></div>) : (<div><p>No garden</p></div>)}</div>
+              </div>
               <p id="pop-up-description-p">
                {props.desc}
               </p>
