@@ -14,16 +14,11 @@ export default function Search(props) {
     <div className="search-parent">
       <h3>Find your perfect Meta-Home</h3>
       <div className="search-container">
-        {/* <input
-          placeholder="search by metaverse"
-          className="search-bar"
-          type="text"
-          onChange={props.onChangeMeta}
-        ></input> */}
-
+      
+<div className="drop-downs-container">
           <div className= "meta-dropdown">
             <button onClick={props.dropDown} className="dropbtn">
-              {props.metaverseName}
+             {props.metaverseName}
             </button>
             {props.show && (
               <div id="myDropdown" className="dropdown-content">
@@ -120,23 +115,23 @@ export default function Search(props) {
             {props.bedroomsShow && (
               <div id="myDropdown" className="bedrooms-dropdown-content">
                 
-                <button
+                <button className="bedrooms-number"
                   onClick={props.bedroomsSelect}
                   value="1"
                 >1</button>
-                  <button
+                  <button className="bedrooms-number"
                   onClick={props.bedroomsSelect}
                   value="2"
                 >2</button>
-                  <button
+                  <button className="bedrooms-number"
                   onClick={props.bedroomsSelect}
                   value="3"
                 >3</button>  
-                <button
+                <button className="bedrooms-number"
                 onClick={props.bedroomsSelect}
                 value="4"
               >4</button>
-                <button
+                <button className="bedrooms-number"
                   onClick={props.bedroomsSelect}
                   value="5"
                 >5+</button>
@@ -162,29 +157,29 @@ export default function Search(props) {
 
 
         <div className= "bathrooms-dropdown">
-            <button onClick={props.bathroomsDropDown} className="dropbtn">
+            <button onClick={props.bathroomsDropDown} className="dropbtn dropbtn-bathroom">
               {props.bathrooms}
             </button>
             {props.bathroomsShow && (
               <div id="myDropdown" className="bathrooms-dropdown-content">
                 
-                <button
+                <button className="bathrooms-number"
                   onClick={props.bathroomsSelect}
                   value="1"
                 >1</button>
-                  <button
+                  <button className="bathrooms-number"
                   onClick={props.bathroomsSelect}
                   value="2"
                 >2</button>
-                  <button
+                  <button className="bathrooms-number"
                   onClick={props.bathroomsSelect}
                   value="3"
                 >3</button>  
-                <button
+                <button className="bathrooms-number"
                 onClick={props.bathroomsSelect}
                 value="4"
               >4</button>
-                <button
+                <button className="bathrooms-number"
                   onClick={props.bathroomsSelect}
                   value="5"
                 >5+</button>
@@ -199,12 +194,17 @@ export default function Search(props) {
           type="text"
           onChange={props.onChangeBath}
         ></input> */}
+        
+        </div>
+        <div className="buttons-container">
         <button id="rent" onClick={props.onClickRent}>
           rent
         </button>
         <button id="buy" onClick={props.onClickBuy}>
           buy
         </button>
+        </div>
+       
       </div>
     </div>
   );

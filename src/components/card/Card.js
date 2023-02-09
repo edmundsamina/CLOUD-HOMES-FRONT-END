@@ -97,7 +97,6 @@ export default function Card(props) {
               <button id="pop-up-button" onClick={() => setShowModal(false)}>Close</button>
             </div>
           </div>
-        
         </Modal>
       ) : null}
     </div>

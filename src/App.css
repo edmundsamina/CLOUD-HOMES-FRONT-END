@@ -357,10 +357,12 @@ span {
 }
 
 .filtering-container {
+  align-self: center;
   margin-top: 120px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 10%;
   height: 50px;
   color: black;
 }
