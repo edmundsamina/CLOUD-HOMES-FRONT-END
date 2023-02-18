@@ -24,6 +24,7 @@ header{
   z-index: 1;
   background-color: white;
   width: 100%;
+
 }
 
 .grey {
@@ -375,8 +376,9 @@ span {
 .filtering-container {
 
 padding:0px;
-
-  height: 100px;
+margin-left: -5%;
+margin-top: 1%;
+  height: 50px;
   color: black;
 
 

@@ -31,19 +31,19 @@ export default function Search(props) {
                   id="apple"
                   src={apple}
                   alt="apple"
-                /><p>apple</p></div><div>
+                /><p>Apple</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="meta"
                   src={meta}
                   alt="meta"
-                /><p>meta</p></div><div>
+                /><p>Meta</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="google"
                   src={google}
                   alt="google"
-                /><p>google</p></div><div>
+                /><p>Google</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="nftworlds"
@@ -55,13 +55,13 @@ export default function Search(props) {
                   id="amazon"
                   src={amazon}
                   alt="amazon"
-                /><p>amazon</p></div><div>
+                /><p>Amazon</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="roblox"
                   src={roblox}
                   alt="roblox"
-                /><p>roblox</p></div>
+                /><p>Roblox</p></div>
               </div>
             )}
           </div>
@@ -77,37 +77,37 @@ export default function Search(props) {
                   id="house"
                   src="https://img.icons8.com/arcade/256/home.png"
                   alt="house"
-                /><p>house</p></div><div>
+                /><p>House</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="flat"
                   src="https://img.icons8.com/arcade/256/apartment.png"
                   alt="flat"
-                /><p>flat</p></div><div>
+                /><p>Flat</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="themed"
                   src="https://img.icons8.com/arcade/256/castle.png"
                   alt="themed"
-                /><p>themed</p></div><div>
+                /><p>Themed</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="studio"
                   src="https://img.icons8.com/arcade/256/room.png"
                   alt="studio"
-                /><p>studio</p></div><div>
+                /><p>Studio</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="cottage"
                   src="https://img.icons8.com/arcade/256/gingerbread-house.png"
                   alt="cottage"
-                /><p>cottage</p></div><div>
+                /><p>Cottage</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="hotel"
                   src="https://img.icons8.com/arcade/256/city-buildings.png"
                   alt="hotel"
-                /><p>hotel</p></div>
+                /><p>Hotel</p></div>
               </div>
             )}
           </div>
