@@ -76,6 +76,20 @@
   width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  text-align: center;
+
+}
+.dropdown-content p {
+  font-size: small;
+  font-weight: 400;
+  color: black;
+  font-family: 'Raleway';
+  margin-top: -6px;
+  padding-bottom: 6px;
+ 
+}
+.dropdown-content div {
+  height: 100%
 }
 
 .bedrooms-dropdown-content, .bathrooms-dropdown-content{
@@ -105,12 +119,13 @@
 /* Links inside the dropdown */
 .dropdown-content img {
  
-  width: 100%;
+ height: 11vh;
+  /* width: 100%; */
   padding: 5px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content img:hover, .bedrooms-number:hover {
+.dropdown-content div:hover, .bedrooms-number:hover {
 
   background-color: #ddd;
 }

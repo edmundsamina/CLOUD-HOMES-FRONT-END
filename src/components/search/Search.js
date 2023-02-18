@@ -22,42 +22,43 @@ export default function Search(props) {
             </button>
             {props.show && (
               <div id="myDropdown" className="dropdown-content">
+                <div>
                 <img
                   onClick={props.metaSelect}
                   id="apple"
                   src={apple}
                   alt="apple"
-                />
+                /><p>apple</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="meta"
                   src={meta}
                   alt="meta"
-                />
+                /><p>meta</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="google"
                   src={google}
                   alt="google"
-                />
+                /><p>google</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="nftworlds"
                   src={nft}
                   alt="nftworlds"
-                />
+                /><p>NFTworlds</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="amazon"
                   src={amazon}
                   alt="amazon"
-                />
+                /><p>amazon</p></div><div>
                 <img
                   onClick={props.metaSelect}
                   id="roblox"
                   src={roblox}
                   alt="roblox"
-                />
+                /><p>roblox</p></div>
               </div>
             )}
           </div>
@@ -68,42 +69,42 @@ export default function Search(props) {
             </button>
             {props.propertyTypeShow && (
               <div id="myDropdown" className="dropdown-content">
-                <img
+                <div><img
                   onClick={props.propertyTypeSelect}
                   id="house"
                   src="https://img.icons8.com/arcade/256/home.png"
                   alt="house"
-                />
+                /><p>house</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="flat"
                   src="https://img.icons8.com/arcade/256/apartment.png"
                   alt="flat"
-                />
+                /><p>flat</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="themed"
                   src="https://img.icons8.com/arcade/256/castle.png"
                   alt="themed"
-                />
+                /><p>themed</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="studio"
                   src="https://img.icons8.com/arcade/256/room.png"
                   alt="studio"
-                />
+                /><p>studio</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="cottage"
                   src="https://img.icons8.com/arcade/256/gingerbread-house.png"
                   alt="cottage"
-                />
+                /><p>cottage</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="hotel"
                   src="https://img.icons8.com/arcade/256/city-buildings.png"
                   alt="hotel"
-                />
+                /><p>hotel</p></div>
               </div>
             )}
           </div>
