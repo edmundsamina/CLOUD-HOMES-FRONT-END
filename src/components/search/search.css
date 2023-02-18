@@ -94,17 +94,21 @@
   font-family: 'Raleway';
   margin-top: -6px;
   padding-bottom: 6px;
+
  
 }
 .dropdown-content div {
 height:100%;
   width: 100%;
   cursor: pointer;
+display: flex;
+flex-direction: column;
 }
 
 /* Links inside the dropdown */
 .dropdown-content img {
-width: 90%;
+width: 100%;
+height:75%;
    padding: 5px;
  }
 
