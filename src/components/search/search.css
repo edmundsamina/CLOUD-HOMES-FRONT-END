@@ -97,9 +97,16 @@
  
 }
 .dropdown-content div {
-  height: 100%;
+height:100%;
+  width: 100%;
   cursor: pointer;
 }
+
+/* Links inside the dropdown */
+.dropdown-content img {
+width: 90%;
+   padding: 5px;
+ }
 
 .bedrooms-dropdown-content, .bathrooms-dropdown-content{
   display: grid;
@@ -125,13 +132,6 @@ cursor: pointer;
 }
 
 
-/* Links inside the dropdown */
-.dropdown-content img {
- 
- height: 11vh;
-  /* width: 100%; */
-  padding: 5px;
-}
 
 /* Change color of dropdown links on hover */
 .dropdown-content div:hover, .bedrooms-number:hover, .bathrooms-number:hover {

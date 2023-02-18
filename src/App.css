@@ -152,7 +152,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
- 
+ width:100%;
   position: absolute;
   top: 48%;
  
@@ -374,13 +374,15 @@ span {
 }
 
 .filtering-container {
-
+width:10vw;
 padding:0px;
-margin-left: -5%;
-margin-top: 1%;
+top:105%;
+left:42vw;
   height: 50px;
   color: black;
-
+position: absolute;
+align-items: center;
+justify-content: center;
 
 }
 
