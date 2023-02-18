@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal.js";
 import { useState } from "react";
 import { FaHeart, FaBed, FaBath, FaLongArrowAltLeft } from 'react-icons/fa';
 import { TbPlant } from 'react-icons/tb'
-import companyIcons from '../../assets/companyIcons'
+import companyIcons from '../../assets/companyIcons.js'
 
 export default function Card(props) {
   const [showModal, setShowModal] = useState(false);

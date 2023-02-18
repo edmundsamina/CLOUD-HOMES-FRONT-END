@@ -6,6 +6,7 @@ import roblox from '../../assets/company-icons/roblox.png';
 import apple from '../../assets/company-icons/apple.png';
 import amazon from '../../assets/company-icons/amazon.png';
 import logo from "../../assets/icons8-home-app-200.png";
+import propertyIcons from "../../assets/property-icons/propertyIcons.js"
 
 export default function Search(props) {
   function reloadPage () {
@@ -75,37 +76,37 @@ export default function Search(props) {
                 <div><img
                   onClick={props.propertyTypeSelect}
                   id="house"
-                  src="https://img.icons8.com/arcade/256/home.png"
+                  src={propertyIcons.house}
                   alt="house"
                 /><p>House</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="flat"
-                  src="https://img.icons8.com/arcade/256/apartment.png"
+                  src={propertyIcons.flat}
                   alt="flat"
                 /><p>Flat</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="themed"
-                  src="https://img.icons8.com/arcade/256/castle.png"
+                  src={propertyIcons.themed}
                   alt="themed"
                 /><p>Themed</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="studio"
-                  src="https://img.icons8.com/arcade/256/room.png"
+                  src={propertyIcons.studio}
                   alt="studio"
                 /><p>Studio</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="cottage"
-                  src="https://img.icons8.com/arcade/256/gingerbread-house.png"
+                  src={propertyIcons.cottage}
                   alt="cottage"
                 /><p>Cottage</p></div><div>
                 <img
                   onClick={props.propertyTypeSelect}
                   id="hotel"
-                  src="https://img.icons8.com/arcade/256/city-buildings.png"
+                  src={propertyIcons.hotel}
                   alt="hotel"
                 /><p>Hotel</p></div>
               </div>

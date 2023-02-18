@@ -1,9 +1,9 @@
 :root {
-    --primaryBlue: rgb(236, 185, 82);
-    --primaryCyan: rgb(251, 221, 159);
+    --primaryBlue: #ecb952;
+    --primaryCyan: #fbdd9f;
     --neutralDarkMain: #ffffff;
     --neutralDarkCard: #2D2D2D;
-    --neutralDarkLine: hsl(215, 32%, 27%);
+    --neutralDarkLine: #2e415c;
     --trueNeutral: hsl(0, 0%, 100%);
     --fontOne: 'Outfit', sans-serif;
 }
@@ -153,7 +153,7 @@ footer{
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    background-color: rgba(194, 194, 194, 0.5);
+    background-color: rgba(180, 180, 180, 0.685);
     letter-spacing: 0.2em;
     padding: 6px;
     width: 100%;
@@ -161,6 +161,10 @@ footer{
     position: absolute;
     bottom: 0px;
     left: 0px;
+    
+}
+.meta-company h5 {
+    font-family: "Raleway";
 }
 
 .company-logo{
