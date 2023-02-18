@@ -1,8 +1,11 @@
 nav{
     display: flex;
-    background-color: white;
+    background-color: var(--neutralDarkCard);
     height: 70px;
     width: 100%;
+    position:fixed;
+    top: 0px;
+  
 }
 
 .landing-container{
@@ -12,8 +15,3 @@ nav{
     width: 50%;
 }
 
-.nav-logo{
-    height: 140px;
-    padding-left: 20px;
-   
-}

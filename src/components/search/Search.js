@@ -5,14 +5,17 @@ import nft from '../../assets/company-icons/nft-worlds.png';
 import roblox from '../../assets/company-icons/roblox.png';
 import apple from '../../assets/company-icons/apple.png';
 import amazon from '../../assets/company-icons/amazon.png';
-
+import logo from "../../assets/icons8-home-app-200.png";
 
 export default function Search(props) {
+  function reloadPage () {
 
+    window.location.reload()
+  }
 
   return (
     <div className="search-parent">
-      <h3>Find your perfect Meta-Home</h3>
+      <img onClick={() => reloadPage()} src={logo} alt="house in the clouds" className="nav-logo" id="nav-logo"/>
       <div className="search-container">
       
 <div className="drop-downs-container">

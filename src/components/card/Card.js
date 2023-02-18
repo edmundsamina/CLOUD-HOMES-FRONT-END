@@ -76,10 +76,10 @@ export default function Card(props) {
       {showModal ? (
         <Modal>
           <div id="pop-up-card">
-            <nav id="pop-up-navigation">
-              <div className="back-pop" onClick={() => setShowModal(false)}><FaLongArrowAltLeft id="arrow" />back to results </div>
-              <FaHeart id="heart" />
-            </nav>
+            <div id="pop-up-navigation">
+              <div className="back-pop" onClick={() => setShowModal(false)}><FaLongArrowAltLeft id="arrow" />back to results <FaHeart id="heart" /></div>
+              
+            </div>
             <div >
               <img id="pop-up-image" src={props.image} alt="property" ></img>
             </div>

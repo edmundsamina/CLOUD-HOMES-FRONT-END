@@ -19,6 +19,12 @@
   --fontOne: "Outfit", sans-serif;
   --fontTwo: "Raleway", sans-serif;
 }
+header{
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+}
 
 .grey {
   color: grey;
@@ -45,6 +51,7 @@ body {
   height: 210px;
   width: 100%;
   background-color: var(--neutralDarkCard);
+  
 }
 
 nav {
@@ -131,11 +138,12 @@ span {
 }
 
 .cardContainer {
-  margin-top: 100px;
+  margin-top: 50px;
   width:1300px ;
   display: grid;
   grid-template-columns: auto auto auto auto;
  row-gap: 40px;
+ overflow: hidden;
 
 }
 
@@ -143,6 +151,13 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
+ 
+  position: absolute;
+  top: 48%;
+ 
+  padding: 30px;
+  
+  padding-top: 0px;
 }
 
 .displayContainer {
@@ -207,10 +222,11 @@ span {
   height: 24px;
   width: 24px;
   float: right;
-  margin-top: -3px;
+  margin-top: -7px;
   transition: all 0.3s ease;
   cursor: pointer;
   fill: #727272;
+
 }
 
 #heart:hover {
@@ -357,14 +373,13 @@ span {
 }
 
 .filtering-container {
-  align-self: center;
-  margin-top: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 10%;
-  height: 50px;
+
+padding:0px;
+
+  height: 100px;
   color: black;
+
+
 }
 
 .filter-pop-up-container {
@@ -565,15 +580,14 @@ span {
 }
 
 /*DROPDOWNS*/
+
 .dropdown {
   min-width: 12em;
-  position: relative;
   display: inline-block;
-  margin-right: 1em;
-  min-height: 2em;
-  max-height: 2em;
+  margin-left: 10%;
+  min-height: 3em;
+  max-height: 3em;
   overflow: hidden;
-  top: 0.5em;
   cursor: pointer;
   text-align: left;
   white-space: nowrap;
@@ -584,6 +598,8 @@ span {
   background-color: #dee0e2;
   transition: 0.3s all ease-in-out;
   font-family: "Raleway";
+  padding: 10px;
+
 }
 
 .option {

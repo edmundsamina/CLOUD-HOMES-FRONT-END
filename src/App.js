@@ -108,7 +108,7 @@ function dropDown() {
   return (
     <div className="App">
       <QueryClientProvider client={Client}>
-        <Navbar />
+      <header> <Navbar />
         <div className="landing-page">
           <Search
           metaverseName={metaverseName}
@@ -167,7 +167,7 @@ function dropDown() {
               Price: Highest to Lowest
             </option>
           </select>{" "}
-        </div>
+        </div></header>
         <div className="grid-parent">
           {housesArray.length < 1 ? (<NoPropertiesFound/>) : (
           <div className="cardContainer">
